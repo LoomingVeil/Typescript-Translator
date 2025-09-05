@@ -10,4 +10,4 @@ export interface IPlayerItemGiverData extends IObject {
 	hasInteractedBefore(jobItemGiver: IJobItemGiver): boolean;
 
 }
-}
+

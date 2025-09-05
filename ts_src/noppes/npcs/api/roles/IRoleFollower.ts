@@ -1,4 +1,5 @@
 import { IPlayer } from "./../entity/IPlayer";
+import { IRole } from "./IRole";
 
 
 export interface IRoleFollower extends IRole {
@@ -93,4 +94,4 @@ export interface IRoleFollower extends IRole {
 	getDialogFarewell(): string;
 
 }
-}
+

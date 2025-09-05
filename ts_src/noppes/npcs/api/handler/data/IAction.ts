@@ -140,4 +140,4 @@ export interface IAction extends IObject {
 	before(t: Consumer): IAction;
 
 }
-}
+

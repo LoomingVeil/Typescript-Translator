@@ -60,4 +60,4 @@ export interface IShapeMaker extends IObject {
 	getHollowCone(center: IPos, baseRadius: number, height: number): IPos[];
 
 }
-}
+

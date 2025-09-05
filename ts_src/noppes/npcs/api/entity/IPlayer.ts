@@ -16,8 +16,10 @@ import { IEntity } from "./IEntity";
 import { IPos } from "./../IPos";
 import { ICustomGui } from "./../gui/ICustomGui";
 import { IOverlayHandler } from "./../handler/IOverlayHandler";
+import { IEntityLivingBase } from "./IEntityLivingBase";
 import { IItemStack } from "./../item/IItemStack";
 import { IPlayerData } from "./../handler/IPlayerData";
+import { IAnimatable } from "./IAnimatable";
 import { IPlayerAttributes } from "./../handler/data/IPlayerAttributes";
 
 import { Entity } from "./../../../../missingTypes";
@@ -783,4 +785,4 @@ export interface IPlayer extends IEntityLivingBase, IAnimatable {
 	isFlying(): boolean;
 
 }
-}
+

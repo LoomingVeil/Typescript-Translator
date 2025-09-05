@@ -277,4 +277,4 @@ export interface IParticle extends IObject {
 	getRotationZRateStart(): number;
 
 }
-}
+

@@ -16,4 +16,4 @@ export interface INaturalSpawnsHandler extends IObject {
 	createSpawn(): INaturalSpawn;
 
 }
-}
+

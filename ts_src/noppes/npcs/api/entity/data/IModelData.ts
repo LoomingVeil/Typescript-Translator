@@ -164,4 +164,4 @@ export interface IModelData extends IObject {
 	getEntity(): string;
 
 }
-}
+

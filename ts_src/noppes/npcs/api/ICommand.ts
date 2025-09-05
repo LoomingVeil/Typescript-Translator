@@ -23,4 +23,4 @@ export interface ICommand extends IObject {
 	removeAlias(alias: string): void;
 
 }
-}
+

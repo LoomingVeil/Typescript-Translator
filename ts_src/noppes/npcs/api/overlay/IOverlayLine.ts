@@ -1,3 +1,4 @@
+import { ICustomOverlayComponent } from "./ICustomOverlayComponent";
 
 
 export interface IOverlayLine extends ICustomOverlayComponent {
@@ -22,4 +23,4 @@ export interface IOverlayLine extends ICustomOverlayComponent {
 	setThickness(thickness: number): void;
 
 }
-}
+

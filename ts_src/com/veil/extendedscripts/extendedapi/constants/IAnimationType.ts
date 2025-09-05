@@ -11,6 +11,6 @@ export interface IAnimationType extends IObject {
 	CRAWLING: number;
 	HUGGING: number;
 }
-}
+
 
 export const AnimationType: IAnimationType = {} as IAnimationType;

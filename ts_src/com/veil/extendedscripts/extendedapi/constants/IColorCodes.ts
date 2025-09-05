@@ -27,4 +27,4 @@ export interface IColorCodes extends IObject {
 	getValue(name: string): string;
 
 }
-}
+

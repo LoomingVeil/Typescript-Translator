@@ -41,4 +41,4 @@ export interface IQuestObjective extends IObject {
 	getAdditionalText(): string;
 
 }
-}
+

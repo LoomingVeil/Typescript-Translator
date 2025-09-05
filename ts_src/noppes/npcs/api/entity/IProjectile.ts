@@ -89,4 +89,4 @@ export interface IProjectile extends IObject {
 	enableEvents(): void;
 
 }
-}
+

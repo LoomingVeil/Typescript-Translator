@@ -16,4 +16,4 @@ export interface IPartyHandler extends IObject {
 	disbandParty(player: IPlayer): void;
 
 }
-}
+

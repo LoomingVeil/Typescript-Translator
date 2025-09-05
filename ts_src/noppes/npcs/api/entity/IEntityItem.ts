@@ -1,3 +1,4 @@
+import { IEntity } from "./IEntity";
 import { IItemStack } from "./../item/IItemStack";
 
 
@@ -87,4 +88,4 @@ export interface IEntityItem extends IEntity {
 	setItem(item: IItemStack): void;
 
 }
-}
+

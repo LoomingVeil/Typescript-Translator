@@ -52,4 +52,4 @@ export interface Vec3i extends IObject {
 	toString(): string;
 
 }
-}
+

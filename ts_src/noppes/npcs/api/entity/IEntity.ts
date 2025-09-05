@@ -644,4 +644,4 @@ export interface IEntity extends IObject {
 	setGravity(value: number): void;
 
 }
-}
+

@@ -48,4 +48,4 @@ export interface IMark extends IObject {
 	update(): void;
 
 }
-}
+

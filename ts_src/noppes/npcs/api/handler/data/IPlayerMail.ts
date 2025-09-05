@@ -31,4 +31,4 @@ export interface IPlayerMail extends IObject {
 	setItems(items: IItemStack[]): void;
 
 }
-}
+

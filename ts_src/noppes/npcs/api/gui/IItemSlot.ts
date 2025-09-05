@@ -1,3 +1,4 @@
+import { ICustomGuiComponent } from "./ICustomGuiComponent";
 import { IItemStack } from "./../item/IItemStack";
 
 import { Slot } from "./../../../../missingTypes";
@@ -37,4 +38,4 @@ export interface IItemSlot extends ICustomGuiComponent {
 	getMCSlot(): Slot;
 
 }
-}
+

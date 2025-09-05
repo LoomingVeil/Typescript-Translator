@@ -8,6 +8,6 @@ export interface IAttributeValueType extends IObject {
 	getValue(value: string): number;
 
 }
-}
+
 
 export const AttributeValueType: IAttributeValueType = {} as IAttributeValueType;

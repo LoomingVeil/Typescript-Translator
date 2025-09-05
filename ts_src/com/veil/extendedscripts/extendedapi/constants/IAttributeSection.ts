@@ -16,6 +16,6 @@ export interface IAttributeSection extends IObject {
 	getValue(value: string): number;
 
 }
-}
+
 
 export const AttributeSection: IAttributeSection = {} as IAttributeSection;

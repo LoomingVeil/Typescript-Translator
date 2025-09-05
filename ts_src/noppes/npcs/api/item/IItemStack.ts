@@ -380,4 +380,4 @@ export interface IItemStack extends IObject {
 	setUnbreakable(item: IItemStack, value: boolean): void;
 
 }
-}
+

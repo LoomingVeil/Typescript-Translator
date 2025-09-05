@@ -1,3 +1,4 @@
+import { ICustomOverlayComponent } from "./ICustomOverlayComponent";
 
 
 export interface IOverlayLabel extends ICustomOverlayComponent {
@@ -20,4 +21,4 @@ export interface IOverlayLabel extends ICustomOverlayComponent {
 	setShadow(shadow: boolean): void;
 
 }
-}
+

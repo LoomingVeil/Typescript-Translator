@@ -134,6 +134,6 @@ export interface IKeys extends IObject {
 	K_POWER: number;
 	K_SLEEP: number;
 }
-}
+
 
 export const Key: IKeys = {} as IKeys;

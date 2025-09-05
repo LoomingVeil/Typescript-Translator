@@ -56,4 +56,4 @@ export interface ILinkedItem extends IObject {
 	setEnchantability(enchantability: number): void;
 
 }
-}
+

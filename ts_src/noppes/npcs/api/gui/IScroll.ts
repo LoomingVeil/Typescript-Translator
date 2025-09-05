@@ -1,3 +1,4 @@
+import { ICustomGuiComponent } from "./ICustomGuiComponent";
 
 
 /**
@@ -74,4 +75,4 @@ export interface IScroll extends ICustomGuiComponent {
 	setMultiSelect(selectMultiple: boolean): IScroll;
 
 }
-}
+

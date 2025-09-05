@@ -1,3 +1,4 @@
+import { IItemCustomizable } from "./IItemCustomizable";
 
 
 export interface IItemCustom extends IItemCustomizable {
@@ -76,4 +77,4 @@ export interface IItemCustom extends IItemCustomizable {
 	setEnchantability(enchantability: number): void;
 
 }
-}
+

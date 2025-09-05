@@ -9,31 +9,38 @@ export interface IPartyEvent extends IObject {
 
 	getQuest(): IQuest;
 
-	export interface PartyQuestCompletedEvent extends IPartyEvent {
-	}
-	export interface PartyQuestSetEvent extends IPartyEvent {
-	}
-	export interface PartyQuestTurnedInEvent extends IPartyEvent {
-	}
-	export interface PartyInviteEvent extends IPartyEvent {
-		getPlayer(): IPlayer;
-
-		getPlayerName(): string;
-
-	}
-	export interface PartyKickEvent extends IPartyEvent {
-		getPlayer(): IPlayer;
-
-		getPlayerName(): string;
-
-	}
-	export interface PartyLeaveEvent extends IPartyEvent {
-		getPlayer(): IPlayer;
-
-		getPlayerName(): string;
-
-	}
-	export interface PartyDisbandEvent extends IPartyEvent {
-	}
 }
+
+export interface PartyQuestCompletedEvent extends IPartyEvent {
 }
+
+export interface PartyQuestSetEvent extends IPartyEvent {
+}
+
+export interface PartyQuestTurnedInEvent extends IPartyEvent {
+}
+
+export interface PartyInviteEvent extends IPartyEvent {
+	getPlayer(): IPlayer;
+
+	getPlayerName(): string;
+
+}
+
+export interface PartyKickEvent extends IPartyEvent {
+	getPlayer(): IPlayer;
+
+	getPlayerName(): string;
+
+}
+
+export interface PartyLeaveEvent extends IPartyEvent {
+	getPlayer(): IPlayer;
+
+	getPlayerName(): string;
+
+}
+
+export interface PartyDisbandEvent extends IPartyEvent {
+}
+

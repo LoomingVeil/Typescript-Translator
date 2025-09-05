@@ -41,4 +41,4 @@ export interface ITextPlane extends IObject {
 	setScale(scale: number): void;
 
 }
-}
+

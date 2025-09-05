@@ -43,4 +43,4 @@ export interface IMagicData extends IObject {
 	getMagicSplit(id: number): number;
 
 }
-}
+

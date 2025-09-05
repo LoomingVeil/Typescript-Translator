@@ -1,4 +1,5 @@
 import { IEntityLivingBase } from "./../entity/IEntityLivingBase";
+import { IJob } from "./IJob";
 
 
 export interface IJobHealer extends IJob {
@@ -13,4 +14,4 @@ export interface IJobHealer extends IJob {
 	getSpeed(): number;
 
 }
-}
+

@@ -9,4 +9,4 @@ export interface IDialogHandler extends IObject {
 	get(var1: number): IDialog;
 
 }
-}
+

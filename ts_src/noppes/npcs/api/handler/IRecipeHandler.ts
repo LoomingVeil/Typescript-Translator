@@ -23,4 +23,4 @@ export interface IRecipeHandler extends IObject {
 	addAnvilRecipe(name: string, global: boolean, itemToRepair: ItemStack, repairMaterial: ItemStack, xpCost: number, repairPercentage: number): void;
 
 }
-}
+

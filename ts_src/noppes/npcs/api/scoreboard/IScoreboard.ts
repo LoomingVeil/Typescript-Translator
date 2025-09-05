@@ -44,4 +44,4 @@ export interface IScoreboard extends IObject {
 	removeTeam(name: string): void;
 
 }
-}
+

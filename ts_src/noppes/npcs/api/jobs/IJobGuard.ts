@@ -1,3 +1,4 @@
+import { IJob } from "./IJob";
 
 
 export interface IJobGuard extends IJob {
@@ -14,4 +15,4 @@ export interface IJobGuard extends IJob {
 	attackHostileMobs(value: boolean): void;
 
 }
-}
+

@@ -62,4 +62,4 @@ export interface IQuest extends IObject {
 	setCustomCooldown(newCooldown: number): void;
 
 }
-}
+

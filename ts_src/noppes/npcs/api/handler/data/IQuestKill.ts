@@ -1,3 +1,4 @@
+import { IQuestInterface } from "./IQuestInterface";
 
 
 export interface IQuestKill extends IQuestInterface {
@@ -6,4 +7,4 @@ export interface IQuestKill extends IQuestInterface {
 	getTargetType(): number;
 
 }
-}
+

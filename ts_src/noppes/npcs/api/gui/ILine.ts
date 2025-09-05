@@ -1,3 +1,4 @@
+import { ICustomGuiComponent } from "./ICustomGuiComponent";
 
 
 /**
@@ -76,4 +77,4 @@ export interface ILine extends ICustomGuiComponent {
 	setThickness(thickness: number): void;
 
 }
-}
+

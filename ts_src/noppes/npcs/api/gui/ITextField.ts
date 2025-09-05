@@ -1,3 +1,4 @@
+import { ICustomGuiComponent } from "./ICustomGuiComponent";
 
 
 /**
@@ -44,4 +45,4 @@ export interface ITextField extends ICustomGuiComponent {
 	setText(text: string): ITextField;
 
 }
-}
+

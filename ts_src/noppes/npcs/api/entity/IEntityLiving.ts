@@ -1,3 +1,4 @@
+import { IEntityLivingBase } from "./IEntityLivingBase";
 import { IEntity } from "./IEntity";
 
 import { Entity } from "./../../../../missingTypes";
@@ -154,4 +155,4 @@ export interface IEntityLiving extends IEntityLivingBase {
 	canBeSteered(): boolean;
 
 }
-}
+

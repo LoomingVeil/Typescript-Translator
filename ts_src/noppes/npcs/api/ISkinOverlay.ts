@@ -75,4 +75,4 @@ export interface ISkinOverlay extends IObject {
 	getOffsetZ(): number;
 
 }
-}
+

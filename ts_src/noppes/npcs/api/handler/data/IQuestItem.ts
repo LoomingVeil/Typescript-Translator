@@ -1,3 +1,4 @@
+import { IQuestInterface } from "./IQuestInterface";
 
 
 export interface IQuestItem extends IQuestInterface {
@@ -14,4 +15,4 @@ export interface IQuestItem extends IQuestInterface {
 	getIgnoreNbt(): boolean;
 
 }
-}
+

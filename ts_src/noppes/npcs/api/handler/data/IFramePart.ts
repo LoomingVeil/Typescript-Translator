@@ -31,4 +31,4 @@ export interface IFramePart extends IObject {
 	setSmooth(smooth: number): IFramePart;
 
 }
-}
+

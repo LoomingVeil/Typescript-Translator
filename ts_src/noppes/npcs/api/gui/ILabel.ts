@@ -1,3 +1,4 @@
+import { ICustomGuiComponent } from "./ICustomGuiComponent";
 
 
 /**
@@ -73,4 +74,4 @@ export interface ILabel extends ICustomGuiComponent {
 	setShadow(shadow: boolean): void;
 
 }
-}
+

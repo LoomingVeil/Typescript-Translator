@@ -77,4 +77,4 @@ export interface IMagicCycle extends IObject {
 	setLayoutType(layout: number): void;
 
 }
-}
+

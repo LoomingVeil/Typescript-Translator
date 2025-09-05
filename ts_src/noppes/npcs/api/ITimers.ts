@@ -84,4 +84,4 @@ export interface ITimers extends IObject {
 	size(): number;
 
 }
-}
+

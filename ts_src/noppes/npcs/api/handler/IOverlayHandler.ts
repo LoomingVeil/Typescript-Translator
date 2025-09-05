@@ -16,4 +16,4 @@ export interface IOverlayHandler extends IObject {
 	clear(): void;
 
 }
-}
+

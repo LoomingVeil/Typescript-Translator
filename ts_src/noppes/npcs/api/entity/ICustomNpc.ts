@@ -1,18 +1,20 @@
 import { IPlayer } from "./IPlayer";
-import { IAnimationData } from "./../handler/data/IAnimationData";
 import { ILines } from "./../handler/data/ILines";
-import { IPos } from "./../IPos";
 import { IFaction } from "./../handler/data/IFaction";
+import { ITimers } from "./../ITimers";
+import { IDialog } from "./../handler/data/IDialog";
+import { IMagicData } from "./../handler/data/IMagicData";
+import { IJob } from "./../jobs/IJob";
+import { IAnimationData } from "./../handler/data/IAnimationData";
+import { IPos } from "./../IPos";
 import { IActionManager } from "./../handler/IActionManager";
 import { IModelData } from "./data/IModelData";
-import { ITimers } from "./../ITimers";
+import { IEntityLiving } from "./IEntityLiving";
 import { IOverlayHandler } from "./../handler/IOverlayHandler";
 import { IEntityLivingBase } from "./IEntityLivingBase";
-import { IDialog } from "./../handler/data/IDialog";
 import { IRole } from "./../roles/IRole";
-import { IMagicData } from "./../handler/data/IMagicData";
 import { IItemStack } from "./../item/IItemStack";
-import { IJob } from "./../jobs/IJob";
+import { IAnimatable } from "./IAnimatable";
 
 
 /**
@@ -1505,4 +1507,4 @@ export interface ICustomNpc extends IEntityLiving, IAnimatable {
 	getAnimationType(): number;
 
 }
-}
+

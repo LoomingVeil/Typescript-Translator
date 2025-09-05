@@ -20,4 +20,4 @@ export interface IPlayerMailData extends IObject {
 	getMailFrom(sender: string): IPlayerMail[];
 
 }
-}
+

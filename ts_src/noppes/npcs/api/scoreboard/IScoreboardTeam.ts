@@ -36,4 +36,4 @@ export interface IScoreboardTeam extends IObject {
 	getSeeInvisibleTeamPlayers(): boolean;
 
 }
-}
+

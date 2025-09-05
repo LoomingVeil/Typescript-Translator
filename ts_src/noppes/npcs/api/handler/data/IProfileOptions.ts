@@ -27,4 +27,4 @@ export interface IProfileOptions extends IObject {
 	getCompleteControl(): number;
 
 }
-}
+

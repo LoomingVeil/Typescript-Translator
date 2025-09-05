@@ -13,4 +13,4 @@ export interface IQuestCategory extends IObject {
 	getId(): number;
 
 }
-}
+

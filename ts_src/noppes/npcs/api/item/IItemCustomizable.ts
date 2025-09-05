@@ -1,3 +1,4 @@
+import { IItemStack } from "./IItemStack";
 
 
 export interface IItemCustomizable extends IItemStack {
@@ -248,4 +249,4 @@ export interface IItemCustomizable extends IItemStack {
 	setHarvestLevel(toolClass: string, level: number): void;
 
 }
-}
+

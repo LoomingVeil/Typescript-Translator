@@ -15,4 +15,4 @@ export interface IItemBook extends IObject {
 	setTitle(var1: string): void;
 
 }
-}
+

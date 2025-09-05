@@ -19,4 +19,4 @@ export interface IBlockState extends IObject {
 	getBlock(): Block;
 
 }
-}
+

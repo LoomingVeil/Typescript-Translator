@@ -42,4 +42,4 @@ export interface ICustomOverlay extends IObject {
 	toNBT(): NBTTagCompound;
 
 }
-}
+

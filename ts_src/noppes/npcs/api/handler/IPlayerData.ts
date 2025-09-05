@@ -35,4 +35,4 @@ export interface IPlayerData extends IObject {
 	save(): void;
 
 }
-}
+

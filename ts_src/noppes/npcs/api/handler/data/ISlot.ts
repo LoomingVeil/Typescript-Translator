@@ -58,4 +58,4 @@ export interface ISlot extends IObject {
 	toNBT(): NBTTagCompound;
 
 }
-}
+

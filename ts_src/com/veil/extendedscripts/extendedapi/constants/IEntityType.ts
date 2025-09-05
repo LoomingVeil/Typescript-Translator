@@ -17,6 +17,6 @@ export interface IEntityType extends IObject {
 	PIXELMON: number;
 	VILLAGER: number;
 }
-}
+
 
 export const EntityType: IEntityType = {} as IEntityType;

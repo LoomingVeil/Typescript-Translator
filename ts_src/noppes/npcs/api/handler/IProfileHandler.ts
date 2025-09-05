@@ -18,4 +18,4 @@ export interface IProfileHandler extends IObject {
 	saveSlotData(player: IPlayer): void;
 
 }
-}
+

@@ -135,4 +135,4 @@ export interface ICustomGuiComponent extends IObject {
 	fromNBT(nbt: NBTTagCompound): ICustomGuiComponent;
 
 }
-}
+

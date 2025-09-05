@@ -59,4 +59,4 @@ export interface IModelRotate extends IObject {
 	getPart(part: number): IModelRotatePart;
 
 }
-}
+

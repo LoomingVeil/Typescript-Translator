@@ -38,4 +38,4 @@ export interface IAttributeHandler extends IObject {
 	getAllAttributesArray(): IAttributeDefinition[];
 
 }
-}
+

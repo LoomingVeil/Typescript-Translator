@@ -1,4 +1,5 @@
 import { IPlayer } from "./../entity/IPlayer";
+import { IRole } from "./IRole";
 import { ITransportLocation } from "./../handler/data/ITransportLocation";
 
 
@@ -16,4 +17,4 @@ export interface IRoleTransporter extends IRole {
 	setTransport(location: ITransportLocation): void;
 
 }
-}
+

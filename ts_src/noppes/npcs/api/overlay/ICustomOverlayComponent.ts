@@ -34,4 +34,4 @@ export interface ICustomOverlayComponent extends IObject {
 	fromNBT(nbt: NBTTagCompound): ICustomOverlayComponent;
 
 }
-}
+

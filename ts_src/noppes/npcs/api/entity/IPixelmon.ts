@@ -1,3 +1,4 @@
+import { IAnimal } from "./IAnimal";
 
 
 /**
@@ -163,4 +164,4 @@ export interface IPixelmon extends IAnimal {
 	setMove(slot: number, move: string): void;
 
 }
-}
+

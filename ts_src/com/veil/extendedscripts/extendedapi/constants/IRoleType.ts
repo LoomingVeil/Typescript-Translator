@@ -10,6 +10,6 @@ export interface IRoleType extends IObject {
 	MAILMAN: number;
 	COMPANION: number;
 }
-}
+
 
 export const Role: IRoleType = {} as IRoleType;

@@ -20,4 +20,4 @@ export interface ILines extends IObject {
 	getKeys(): number[];
 
 }
-}
+

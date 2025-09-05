@@ -7,4 +7,4 @@ export interface IItemArmor extends IObject {
 	getArmorMaterial(): string;
 
 }
-}
+

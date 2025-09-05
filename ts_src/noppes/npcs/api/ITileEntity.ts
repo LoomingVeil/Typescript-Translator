@@ -71,4 +71,4 @@ export interface ITileEntity extends IObject {
 	getNBT(): INbt;
 
 }
-}
+

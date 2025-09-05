@@ -1,3 +1,4 @@
+import { ICustomGuiComponent } from "./ICustomGuiComponent";
 
 
 /**
@@ -117,4 +118,4 @@ export interface IButton extends ICustomGuiComponent {
 	isEnabled(): boolean;
 
 }
-}
+

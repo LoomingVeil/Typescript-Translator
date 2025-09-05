@@ -5,6 +5,7 @@ import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.ast.PackageDeclaration;
 import com.github.javaparser.ast.body.*;
 import com.github.javaparser.ast.comments.JavadocComment;
+import com.github.javaparser.ast.type.ClassOrInterfaceType;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -56,7 +57,7 @@ public class JavaToTypeScript {
         // Translate ever file
         Files.walk(inputRoot.toPath())
                 .filter(p -> p.toString().endsWith(".java"))
-                .forEach(path -> processFile(parser, inputRoot, outputRoot, path.toFile()));
+                .forEach(path -> processFile(parser, outputRoot, path.toFile()));
 
         // Create the IObject class which
         String IObjectText = "" +
@@ -71,11 +72,14 @@ public class JavaToTypeScript {
             writer.println(IObjectText);
         }
 
+        // If all types are known, no need to continue
         if (unknownTypes.isEmpty()) return;
 
+        // Creates a file for all types that stores interface shells so that can be imported to lower errors
         File outFile = new File(outputRoot, "missingTypes.ts");
         try (PrintWriter writer = new PrintWriter(new FileWriter(outFile))) {
             for (String type : unknownTypes) {
+                writer.println("/** This interface is a shell. The real class is either defined in java or belongs to Minecraft. */");
                 writer.println("export interface " + type + " {}");
             }
         } catch (IOException e) {
@@ -140,103 +144,32 @@ public class JavaToTypeScript {
         System.out.println("Mapped " + classLocationMap.size() + " types.\n");
     }
 
-    private static List<String> processFile(JavaParser parser, File inputRoot, File outputRoot, File javaFile) {
+    private static void processFile(JavaParser parser, File outputRoot, File javaFile) {
         try {
             CompilationUnit cu = parser.parse(javaFile).getResult().orElseThrow();
+            // Stores the string of the class up until imports are added
             StringBuilder sb = new StringBuilder();
-            List<String> types = new ArrayList<>();
+            // All the custom types that are references. All referenced types are imported if not forbidden.
             Set<String> referencedTypes = new HashSet<>();
+            // The only forbidden types are the types of the interfaces defined in the same file.
+            List<String> forbiddenTypes = new ArrayList<>();
 
             boolean isStatic = false;
             String exportStatement = "";
 
             for (TypeDeclaration<?> type : cu.getTypes()) {
-                types.add(type.getNameAsString());
                 if (type instanceof ClassOrInterfaceDeclaration clazz) {
-                    // Collect extended types
-                    clazz.getExtendedTypes().forEach(ext -> referencedTypes.add(ext.getNameAsString()));
 
-                    // ---- Class Javadoc ----
-                    clazz.getJavadocComment().ifPresent(javadoc -> {
-                        String cleaned = cleanJavadoc(javadoc);
-                        sb.append("/**\n");
-                        for (String line : cleaned.split("\n")) {
-                            sb.append(" * ").append(line).append("\n");
-                        }
-                        sb.append(" */\n");
-                    });
+                    forbiddenTypes.add(clazz.getNameAsString());
+                    processClassOrInterface(clazz, sb, referencedTypes, forbiddenTypes);
 
                     String className = clazz.getNameAsString();
                     if (staticTypes.containsKey(mapType(className))) {
                         isStatic = true;
-                        exportStatement = "export const "+staticTypes.get(className)+": "+className+" = {} as "+className+";";
-                    }
-
-                    if (clazz.getExtendedTypes().isEmpty()) {
-                        clazz.addExtendedType("IObject");
-                        referencedTypes.add("IObject");
-                    }
-
-                    sb.append(isStatic ? "" : "export ")
-                            .append("interface ").append(clazz.getName())
-                            .append(clazz.getExtendedTypes().isNonEmpty() ? " extends " : "")
-                            .append(clazz.getExtendedTypes().stream()
-                                    .map(ext -> ext.getNameAsString())
-                                    .collect(Collectors.joining(", ")))
-                            .append(" {\n");
-
-                    // Print all fields
-                    for (FieldDeclaration field : clazz.getFields()) {
-                        for (VariableDeclarator var : field.getVariables()) {
-                            String fieldName = var.getNameAsString();
-                            String fieldType = mapType(var.getType().asString());
-
-                            if (clazz.isInterface()) {
-                                sb.append("\t").append(fieldName).append(": ").append(fieldType).append(";\n");
-                            } else {
-                                sb.append("\t").append(fieldName).append(": ").append(fieldType).append(";\n");
-                            }
-                        }
-                    }
-                    sb.append("\n");
-
-                    // Print all the methods
-                    for (MethodDeclaration method : clazz.getMethods()) {
-                        // Collect return + param types
-                        String returnType = method.getType().asString();
-                        if (!baseType(returnType).equals(clazz.getNameAsString())) {
-                            referencedTypes.add(baseType(returnType));
-                        }
-
-                        method.getParameters().forEach(p -> {
-                            String paramType = p.getType().asString();
-                            if (!baseType(paramType).equals(clazz.getNameAsString())) {
-                                referencedTypes.add(baseType(paramType));
-                            }
-                        });
-
-                        // ---- Method Javadoc ----
-                        method.getJavadocComment().ifPresent(javadoc -> {
-                            String cleaned = cleanJavadoc(javadoc);
-                            sb.append("\t/**\n");
-                            for (String line : cleaned.split("\n")) {
-                                sb.append("\t * ").append(line).append("\n");
-                            }
-                            sb.append("\t */\n");
-                        });
-
-                        String tsType = mapType(method.getType().asString());
-                        String params = method.getParameters().stream()
-                                .map(p -> p.getName() + ": " + mapType(p.getType().asString()))
-                                .collect(Collectors.joining(", "));
-
-                        sb.append("\t").append(method.getName())
-                                .append("(").append(params).append("): ")
-                                .append(tsType).append(";\n\n");
+                        exportStatement = "export const " + staticTypes.get(className) + ": " +
+                                className + " = {} as " + className + ";";
                     }
                 }
-
-                sb.append("}\n");
             }
 
             // ---- Write file ----
@@ -254,6 +187,7 @@ public class JavaToTypeScript {
             // ---- Build imports ----
             StringBuilder finalOutput = new StringBuilder();
             Path currentDir = outFile.getParentFile().toPath();
+            referencedTypes.removeAll(forbiddenTypes);
 
             for (String ref : referencedTypes) {
                 Path target = classLocationMap.get(ref);
@@ -283,8 +217,8 @@ public class JavaToTypeScript {
             finalOutput.append(sb);
 
             if (isStatic) {
-                System.out.println("Added static: "+exportStatement);
-                finalOutput.append("\n"+exportStatement+"\n");
+                System.out.println("Added static: " + exportStatement);
+                finalOutput.append("\n" + exportStatement + "\n");
             }
 
             try (PrintWriter writer = new PrintWriter(new FileWriter(outFile))) {
@@ -294,14 +228,94 @@ public class JavaToTypeScript {
             System.out.println("Converted: " + javaFile.getPath() + " -> " + outFile.getPath());
             currentUnknownTypes = new HashSet<>();
 
-            return types;
         } catch (Exception e) {
             currentUnknownTypes = new HashSet<>();
             System.err.println("Failed to process " + javaFile.getPath() + ": " + e.getMessage());
         }
-
-        return null;
     }
+
+    private static void processClassOrInterface(ClassOrInterfaceDeclaration clazz, StringBuilder sb, Set<String> referencedTypes, List<String> forbiddenTypes) {
+
+        // ---- Javadoc ----
+        clazz.getJavadocComment().ifPresent(javadoc -> {
+            String cleaned = cleanJavadoc(javadoc);
+            sb.append("/**\n");
+            for (String line : cleaned.split("\n")) {
+                sb.append(" * ").append(line).append("\n");
+            }
+            sb.append(" */\n");
+        });
+
+        // Ensure extends at least IObject
+        if (clazz.getExtendedTypes().isEmpty()) {
+            clazz.addExtendedType("IObject");
+            referencedTypes.add("IObject");
+        }
+
+        sb.append("export interface ").append(clazz.getName())
+                .append(clazz.getExtendedTypes().isNonEmpty() ? " extends " : "")
+                .append(clazz.getExtendedTypes().stream()
+                .map(ext -> ext.getNameAsString())
+                .collect(Collectors.joining(", ")))
+                .append(" {\n");
+
+        for (ClassOrInterfaceType ref : clazz.getExtendedTypes()) {
+            referencedTypes.add(mapType(ref.getNameAsString()));
+        }
+
+        // ---- Fields ----
+        for (FieldDeclaration field : clazz.getFields()) {
+            for (VariableDeclarator var : field.getVariables()) {
+                String fieldName = var.getNameAsString();
+                String fieldType = mapType(var.getType().asString());
+                sb.append("\t").append(fieldName).append(": ").append(fieldType).append(";\n");
+            }
+        }
+
+        // ---- Methods ----
+        for (MethodDeclaration method : clazz.getMethods()) {
+            String returnType = method.getType().asString();
+            if (!baseType(returnType).equals(clazz.getNameAsString())) {
+                referencedTypes.add(baseType(returnType));
+            }
+
+            method.getParameters().forEach(p -> {
+                String paramType = p.getType().asString();
+                if (!baseType(paramType).equals(clazz.getNameAsString())) {
+                    referencedTypes.add(baseType(paramType));
+                }
+            });
+
+            // Javadoc
+            method.getJavadocComment().ifPresent(javadoc -> {
+                String cleaned = cleanJavadoc(javadoc);
+                sb.append("\t/**\n");
+                for (String line : cleaned.split("\n")) {
+                    sb.append("\t * ").append(line).append("\n");
+                }
+                sb.append("\t */\n");
+            });
+
+            String tsType = mapType(method.getType().asString());
+            String params = method.getParameters().stream()
+                    .map(p -> p.getName() + ": " + mapType(p.getType().asString()))
+                    .collect(Collectors.joining(", "));
+
+            sb.append("\t").append(method.getName())
+                    .append("(").append(params).append("): ")
+                    .append(tsType).append(";\n\n");
+        }
+
+        sb.append("}\n\n");
+
+        for (BodyDeclaration<?> member : clazz.getMembers()) {
+            if (member instanceof ClassOrInterfaceDeclaration inner) {
+                forbiddenTypes.add(inner.getNameAsString());
+                processClassOrInterface(inner, sb, referencedTypes, forbiddenTypes);
+            }
+        }
+    }
+
 
     private static String baseType(String javaType) {
         return javaType.replaceAll("<.*>", "") // strip generics
@@ -315,7 +329,7 @@ public class JavaToTypeScript {
         // Remove generics like <T>, <K,V>, etc.
         String nonGenericType = javaType.replaceAll("<.*>", "");
         // Strip [] for base type detection
-        String baseType = nonGenericType.replace("[]", "");
+        String baseType = baseType(nonGenericType);
 
         // --- Handle generic placeholders (T, E, K, V, single letters) ---
         if (baseType.matches("^[A-Z]$")) {

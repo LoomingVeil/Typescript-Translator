@@ -8,4 +8,4 @@ export interface IPixelmonPlayerData extends IObject {
 	countPCPixelmon(): number;
 
 }
-}
+

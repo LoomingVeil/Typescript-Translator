@@ -1,3 +1,4 @@
+import { IJob } from "./IJob";
 
 
 export interface IJobBard extends IJob {
@@ -26,4 +27,4 @@ export interface IJobBard extends IJob {
 	hasOffRange(): boolean;
 
 }
-}
+

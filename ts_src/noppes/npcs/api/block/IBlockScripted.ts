@@ -1,3 +1,4 @@
+import { IBlock } from "./../IBlock";
 import { ITextPlane } from "./ITextPlane";
 import { IItemStack } from "./../item/IItemStack";
 import { ITimers } from "./../ITimers";
@@ -140,4 +141,4 @@ export interface IBlockScripted extends IBlock {
 	getTempDataKeys(): string[];
 
 }
-}
+

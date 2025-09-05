@@ -394,6 +394,6 @@ export interface AbstractNpcAPI extends IObject {
 	createPart(partId: number, rotation: number[], pivot: number[], speed: number, smooth: number): IFramePart;
 
 }
-}
+
 
 export const API: AbstractNpcAPI = {} as AbstractNpcAPI;

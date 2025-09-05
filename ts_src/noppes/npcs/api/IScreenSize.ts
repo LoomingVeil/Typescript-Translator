@@ -11,4 +11,4 @@ export interface IScreenSize extends IObject {
 	getHeightPercent(percent: number): number;
 
 }
-}
+

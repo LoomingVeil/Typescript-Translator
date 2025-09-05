@@ -447,4 +447,4 @@ export interface IWorld extends IObject {
 	setAllBlocks(positions: IPos[], block: IBlock): boolean;
 
 }
-}
+

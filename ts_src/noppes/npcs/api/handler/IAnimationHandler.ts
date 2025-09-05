@@ -18,4 +18,4 @@ export interface IAnimationHandler extends IObject {
 	getAnimations(): IAnimation[];
 
 }
-}
+

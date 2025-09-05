@@ -13,4 +13,4 @@ export interface IScoreboardObjective extends IObject {
 	isReadyOnly(): boolean;
 
 }
-}
+

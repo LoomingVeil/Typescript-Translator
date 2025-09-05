@@ -248,4 +248,4 @@ export interface IActionManager extends IObject {
 	parallelChain(): IActionChain;
 
 }
-}
+

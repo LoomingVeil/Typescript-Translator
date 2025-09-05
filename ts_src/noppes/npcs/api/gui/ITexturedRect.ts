@@ -1,3 +1,4 @@
+import { ICustomGuiComponent } from "./ICustomGuiComponent";
 
 
 /**
@@ -82,4 +83,4 @@ export interface ITexturedRect extends ICustomGuiComponent {
 	setTextureOffset(textureX: number, textureY: number): ITexturedRect;
 
 }
-}
+

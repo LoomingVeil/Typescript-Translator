@@ -1,3 +1,4 @@
+import { IPlayer } from "./IPlayer";
 import { IItemStack } from "./../item/IItemStack";
 
 
@@ -486,4 +487,4 @@ export interface IDBCPlayer extends IPlayer {
 	getFusionString(): string;
 
 }
-}
+

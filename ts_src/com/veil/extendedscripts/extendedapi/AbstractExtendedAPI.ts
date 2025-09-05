@@ -85,6 +85,6 @@ export interface AbstractExtendedAPI extends IObject {
 	getCustomAttributeKeyList(): string[];
 
 }
-}
+
 
 export const extAPI: AbstractExtendedAPI = {} as AbstractExtendedAPI;

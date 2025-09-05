@@ -9,4 +9,4 @@ export interface IPlayerDialogData extends IObject {
 	unreadDialog(id: number): void;
 
 }
-}
+

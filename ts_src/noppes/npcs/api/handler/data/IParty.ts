@@ -119,4 +119,4 @@ export interface IParty extends IObject {
 	updatePartyData(): void;
 
 }
-}
+

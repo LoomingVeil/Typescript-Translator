@@ -12,6 +12,6 @@ export interface IJobType extends IObject {
 	CONVERSATION: number;
 	CHUNK_LOADER: number;
 }
-}
+
 
 export const Job: IJobType = {} as IJobType;

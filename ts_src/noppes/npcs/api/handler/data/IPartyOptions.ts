@@ -69,4 +69,4 @@ export interface IPartyOptions extends IObject {
 	setMaxPartySize(newSize: number): void;
 
 }
-}
+

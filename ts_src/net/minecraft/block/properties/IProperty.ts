@@ -16,4 +16,4 @@ export interface IProperty extends IObject {
 	getName(value: T): string;
 
 }
-}
+

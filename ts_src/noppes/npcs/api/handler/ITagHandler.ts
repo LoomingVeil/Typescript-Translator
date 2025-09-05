@@ -13,4 +13,4 @@ export interface ITagHandler extends IObject {
 	get(var1: number): ITag;
 
 }
-}
+

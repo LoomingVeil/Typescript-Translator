@@ -1,3 +1,4 @@
+import { IJob } from "./IJob";
 import { ICustomNpc } from "./../entity/ICustomNpc";
 
 
@@ -11,4 +12,4 @@ export interface IJobFollower extends IJob {
 	isFollowing(): boolean;
 
 }
-}
+

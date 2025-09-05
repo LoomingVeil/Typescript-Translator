@@ -47,4 +47,4 @@ export interface INaturalSpawn extends IObject {
 	setBiomes(biomes: string[]): void;
 
 }
-}
+

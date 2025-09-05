@@ -1,4 +1,5 @@
 import { IPlayer } from "./../entity/IPlayer";
+import { IRole } from "./IRole";
 import { IItemStack } from "./../item/IItemStack";
 
 
@@ -122,4 +123,4 @@ export interface IRoleTrader extends IRole {
 	enableSlot(slot: number, player: IPlayer): void;
 
 }
-}
+

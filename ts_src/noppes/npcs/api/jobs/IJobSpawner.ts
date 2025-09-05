@@ -1,5 +1,6 @@
 import { IPlayer } from "./../entity/IPlayer";
 import { IEntityLivingBase } from "./../entity/IEntityLivingBase";
+import { IJob } from "./IJob";
 import { IWorld } from "./../IWorld";
 import { IPos } from "./../IPos";
 
@@ -27,4 +28,4 @@ export interface IJobSpawner extends IJob {
 	isOnCooldown(player: IPlayer): boolean;
 
 }
-}
+

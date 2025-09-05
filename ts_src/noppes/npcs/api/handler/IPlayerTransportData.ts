@@ -16,4 +16,4 @@ export interface IPlayerTransportData extends IObject {
 	removeTransport(id: number): void;
 
 }
-}
+

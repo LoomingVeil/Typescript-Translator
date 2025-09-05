@@ -30,4 +30,4 @@ export interface IFrame extends IObject {
 	setSmooth(smooth: number): IFrame;
 
 }
-}
+

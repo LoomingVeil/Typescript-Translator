@@ -1,3 +1,5 @@
+import { IEntityLiving } from "./IEntityLiving";
+
 
 /**
  * Represents a monster entity.
@@ -8,4 +10,4 @@
  */
 export interface IMonster extends IEntityLiving {
 }
-}
+

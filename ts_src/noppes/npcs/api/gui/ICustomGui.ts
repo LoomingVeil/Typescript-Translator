@@ -353,4 +353,4 @@ export interface ICustomGui extends IObject {
 	toNBT(): NBTTagCompound;
 
 }
-}
+

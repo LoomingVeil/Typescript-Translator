@@ -1,4 +1,5 @@
 import { IPlayer } from "./../entity/IPlayer";
+import { IJob } from "./IJob";
 import { IItemStack } from "./../item/IItemStack";
 import { IAvailability } from "./../handler/data/IAvailability";
 
@@ -31,4 +32,4 @@ export interface IJobItemGiver extends IJob {
 	canPlayerInteract(player: IPlayer): boolean;
 
 }
-}
+

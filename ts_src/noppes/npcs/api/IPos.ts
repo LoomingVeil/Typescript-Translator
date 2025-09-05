@@ -161,4 +161,4 @@ export interface IPos extends IObject {
 	getMCPos(): BlockPos;
 
 }
-}
+

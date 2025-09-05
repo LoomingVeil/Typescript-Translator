@@ -53,4 +53,4 @@ export interface IFaction extends IObject {
 	save(): void;
 
 }
-}
+

@@ -1,3 +1,4 @@
+import { ICustomOverlayComponent } from "./ICustomOverlayComponent";
 
 
 export interface IOverlayTexturedRect extends ICustomOverlayComponent {
@@ -22,4 +23,4 @@ export interface IOverlayTexturedRect extends ICustomOverlayComponent {
 	setTextureOffset(var1: number, var2: number): IOverlayTexturedRect;
 
 }
-}
+

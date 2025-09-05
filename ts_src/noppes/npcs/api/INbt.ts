@@ -131,4 +131,4 @@ export interface INbt extends IObject {
 	clear(): void;
 
 }
-}
+

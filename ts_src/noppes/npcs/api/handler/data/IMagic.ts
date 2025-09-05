@@ -88,4 +88,4 @@ export interface IMagic extends IObject {
 	getInteraction(magicID: number, value: number): number;
 
 }
-}
+

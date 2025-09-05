@@ -8,4 +8,4 @@ export interface IJob extends IObject {
 	getNpc(): ICustomNpc;
 
 }
-}
+

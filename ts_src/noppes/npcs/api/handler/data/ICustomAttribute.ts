@@ -25,4 +25,4 @@ export interface ICustomAttribute extends IObject {
 	getValue(): number;
 
 }
-}
+

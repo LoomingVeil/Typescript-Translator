@@ -1,3 +1,4 @@
+import { IAction } from "./../IAction";
 
 import { Consumer } from "./../../../../../../missingTypes";
 import { Supplier } from "./../../../../../../missingTypes";
@@ -62,4 +63,4 @@ export interface IConditionalAction extends IAction {
 	after(name: string, condition: Supplier, task: Consumer, terminateWhen: Supplier, onTermination: Consumer): IConditionalAction;
 
 }
-}
+

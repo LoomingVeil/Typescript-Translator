@@ -13,4 +13,4 @@ export interface IDialogCategory extends IObject {
 	getId(): number;
 
 }
-}
+

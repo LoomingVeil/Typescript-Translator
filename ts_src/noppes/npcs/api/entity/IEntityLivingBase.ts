@@ -437,4 +437,4 @@ export interface IEntityLivingBase extends IEntity {
 	getAbsorptionAmount(): number;
 
 }
-}
+

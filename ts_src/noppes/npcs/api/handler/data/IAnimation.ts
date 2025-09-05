@@ -60,4 +60,4 @@ export interface IAnimation extends IObject {
 	getTotalTime(): number;
 
 }
-}
+

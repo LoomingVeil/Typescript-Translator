@@ -38,4 +38,4 @@ export interface IAnvilRecipe extends IObject {
 	getID(): number;
 
 }
-}
+

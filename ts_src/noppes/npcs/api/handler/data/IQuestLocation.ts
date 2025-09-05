@@ -1,3 +1,4 @@
+import { IQuestInterface } from "./IQuestInterface";
 
 
 export interface IQuestLocation extends IQuestInterface {
@@ -14,4 +15,4 @@ export interface IQuestLocation extends IQuestInterface {
 	getLocation3(): string;
 
 }
-}
+

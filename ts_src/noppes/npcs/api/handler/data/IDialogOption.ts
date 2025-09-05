@@ -9,4 +9,4 @@ export interface IDialogOption extends IObject {
 	getType(): number;
 
 }
-}
+

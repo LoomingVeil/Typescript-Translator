@@ -18,4 +18,4 @@ export interface ILine extends IObject {
 	hideText(): boolean;
 
 }
-}
+

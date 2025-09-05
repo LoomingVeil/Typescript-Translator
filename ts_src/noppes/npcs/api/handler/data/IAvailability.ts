@@ -171,4 +171,4 @@ export interface IAvailability extends IObject {
 	removeFaction(slot: number): void;
 
 }
-}
+

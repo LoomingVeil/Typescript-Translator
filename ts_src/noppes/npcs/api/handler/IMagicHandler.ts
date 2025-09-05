@@ -45,4 +45,4 @@ export interface IMagicHandler extends IObject {
 	removeMagicFromCycle(magicId: number, cycleId: number): void;
 
 }
-}
+

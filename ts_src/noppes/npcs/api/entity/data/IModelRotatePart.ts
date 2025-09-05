@@ -52,4 +52,4 @@ export interface IModelRotatePart extends IObject {
 	disabled(): boolean;
 
 }
-}
+

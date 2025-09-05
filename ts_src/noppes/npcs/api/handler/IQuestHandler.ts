@@ -9,4 +9,4 @@ export interface IQuestHandler extends IObject {
 	get(var1: number): IQuest;
 
 }
-}
+

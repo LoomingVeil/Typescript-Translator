@@ -143,4 +143,4 @@ export interface IDialog extends IObject {
 	clearImages(): void;
 
 }
-}
+

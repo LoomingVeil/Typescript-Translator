@@ -1,9 +1,9 @@
 import { IObject } from "./../../../../IObject";
 
-import { IntHashMap.Entry } from "./../../../../missingTypes";
+import { Entry } from "./../../../../missingTypes";
 
 export interface IntHashMap extends IObject {
-	slots: IntHashMap.Entry[];
+	slots: Entry[];
 	count: number;
 	threshold: number;
 	growFactor: number;
@@ -27,7 +27,7 @@ export interface IntHashMap extends IObject {
 	 */
 	containsItem(p_76037_1_: number): boolean;
 
-	lookupEntry(p_76045_1_: number): IntHashMap.Entry;
+	lookupEntry(p_76045_1_: number): Entry;
 
 	/**
 	 * Adds a key and associated value to this map
@@ -42,14 +42,14 @@ export interface IntHashMap extends IObject {
 	/**
 	 * Copies the hash slots to a new array
 	 */
-	copyTo(p_76048_1_: IntHashMap.Entry[]): void;
+	copyTo(p_76048_1_: Entry[]): void;
 
 	/**
 	 * Removes the specified object from the map and returns it
 	 */
 	removeObject(p_76049_1_: number): V;
 
-	removeEntry(p_76036_1_: number): IntHashMap.Entry;
+	removeEntry(p_76036_1_: number): Entry;
 
 	/**
 	 * Removes all entries from the map
@@ -61,27 +61,28 @@ export interface IntHashMap extends IObject {
 	 */
 	insert(p_76040_1_: number, p_76040_2_: number, p_76040_3_: V, p_76040_4_: number): void;
 
-	export interface Entry extends IObject {
-		hashEntry: number;
-		valueEntry: V;
-		nextEntry: IntHashMap.Entry;
-		slotHash: number;
-		/**
-		 * Returns the hash code for this entry
-		 */
-		getHash(): number;
-
-		/**
-		 * Returns the object stored in this entry
-		 */
-		getValue(): V;
-
-		equals(p_equals_1_: any): boolean;
-
-		hashCode(): number;
-
-		toString(): string;
-
-	}
 }
+
+export interface Entry extends IObject {
+	hashEntry: number;
+	valueEntry: V;
+	nextEntry: Entry;
+	slotHash: number;
+	/**
+	 * Returns the hash code for this entry
+	 */
+	getHash(): number;
+
+	/**
+	 * Returns the object stored in this entry
+	 */
+	getValue(): V;
+
+	equals(p_equals_1_: any): boolean;
+
+	hashCode(): number;
+
+	toString(): string;
+
 }
+

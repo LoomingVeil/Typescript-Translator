@@ -9,4 +9,4 @@ export interface IPlayerFactionData extends IObject {
 	setPoints(id: number, points: number): void;
 
 }
-}
+

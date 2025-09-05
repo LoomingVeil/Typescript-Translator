@@ -55,4 +55,4 @@ export interface IDialogImage extends IObject {
 	getAlignment(): number;
 
 }
-}
+

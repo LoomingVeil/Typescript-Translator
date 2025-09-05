@@ -37,4 +37,4 @@ export interface IModelScalePart extends IObject {
 	getScaleZ(): number;
 
 }
-}
+

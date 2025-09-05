@@ -71,4 +71,4 @@ export interface IAnimationData extends IObject {
 	getAnimatingTime(): number;
 
 }
-}
+

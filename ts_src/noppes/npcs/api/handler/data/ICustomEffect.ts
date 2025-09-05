@@ -53,4 +53,4 @@ export interface ICustomEffect extends IObject {
 	getIndex(): number;
 
 }
-}
+

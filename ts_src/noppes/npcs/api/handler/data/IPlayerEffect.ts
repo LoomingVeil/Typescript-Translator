@@ -24,4 +24,4 @@ export interface IPlayerEffect extends IObject {
 	setIndex(index: number): void;
 
 }
-}
+

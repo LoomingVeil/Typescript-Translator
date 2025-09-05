@@ -139,4 +139,4 @@ export interface IBlock extends IObject {
 	getAsItem(): IItemStack;
 
 }
-}
+

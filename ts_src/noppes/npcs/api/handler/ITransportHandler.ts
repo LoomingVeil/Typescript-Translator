@@ -12,4 +12,4 @@ export interface ITransportHandler extends IObject {
 	removeCategory(title: string): void;
 
 }
-}
+

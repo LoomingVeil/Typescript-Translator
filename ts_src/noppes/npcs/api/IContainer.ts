@@ -52,4 +52,4 @@ export interface IContainer extends IObject {
 	isPlayerNotUsingContainer(player: IPlayer): boolean;
 
 }
-}
+

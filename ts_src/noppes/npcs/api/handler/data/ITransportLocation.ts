@@ -30,4 +30,4 @@ export interface ITransportLocation extends IObject {
 	save(): void;
 
 }
-}
+

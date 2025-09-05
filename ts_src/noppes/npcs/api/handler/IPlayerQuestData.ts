@@ -26,4 +26,4 @@ export interface IPlayerQuestData extends IObject {
 	setLastCompletedTime(id: number, time: number): void;
 
 }
-}
+

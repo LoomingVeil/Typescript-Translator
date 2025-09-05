@@ -24,4 +24,4 @@ export interface ICloneHandler extends IObject {
 	remove(tab: number, name: string): void;
 
 }
-}
+

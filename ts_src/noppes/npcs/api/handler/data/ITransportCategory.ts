@@ -16,4 +16,4 @@ export interface ITransportCategory extends IObject {
 	removeLocation(name: string): void;
 
 }
-}
+

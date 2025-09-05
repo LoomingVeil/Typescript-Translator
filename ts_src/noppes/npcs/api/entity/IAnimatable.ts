@@ -15,4 +15,4 @@ export interface IAnimatable extends IObject {
 	getAnimationData(): IAnimationData;
 
 }
-}
+

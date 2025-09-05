@@ -13,4 +13,4 @@ export interface IFactionHandler extends IObject {
 	get(var1: number): IFaction;
 
 }
-}
+

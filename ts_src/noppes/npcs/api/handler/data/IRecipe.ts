@@ -30,4 +30,4 @@ export interface IRecipe extends IObject {
 	getId(): number;
 
 }
-}
+

@@ -1,3 +1,4 @@
+import { IEntityLiving } from "./IEntityLiving";
 import { IPlayer } from "./IPlayer";
 import { IItemStack } from "./../item/IItemStack";
 
@@ -63,4 +64,4 @@ export interface IAnimal extends IEntityLiving {
 	canMateWith(animal: IAnimal): boolean;
 
 }
-}
+

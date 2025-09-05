@@ -250,4 +250,4 @@ export interface ICustomEffectHandler extends IObject {
 	saveEffect(customEffect: ICustomEffect): ICustomEffect;
 
 }
-}
+

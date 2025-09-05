@@ -38,4 +38,4 @@ export interface IAttributeDefinition extends IObject {
 	getColorCode(): string;
 
 }
-}
+

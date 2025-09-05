@@ -48,4 +48,4 @@ export interface IPlayerAttributes extends IObject {
 	getAttribute(key: string): ICustomAttribute;
 
 }
-}
+

@@ -8,4 +8,4 @@ export interface IActionChain extends IObject {
 	after(delay: number, task: Consumer): IActionChain;
 
 }
-}
+

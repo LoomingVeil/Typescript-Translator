@@ -1,3 +1,4 @@
+import { IEntityLiving } from "./IEntityLiving";
 import { IEntityLivingBase } from "./IEntityLivingBase";
 
 
@@ -25,4 +26,4 @@ export interface IVillager extends IEntityLiving {
 	getCustomer(): IEntityLivingBase;
 
 }
-}
+

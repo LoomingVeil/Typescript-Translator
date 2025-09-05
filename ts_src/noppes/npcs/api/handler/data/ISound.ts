@@ -35,4 +35,4 @@ export interface ISound extends IObject {
 	getZ(): number;
 
 }
-}
+

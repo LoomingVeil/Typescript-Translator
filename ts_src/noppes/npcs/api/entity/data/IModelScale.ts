@@ -17,4 +17,4 @@ export interface IModelScale extends IObject {
 	getPart(part: number): IModelScalePart;
 
 }
-}
+
