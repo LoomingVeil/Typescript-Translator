@@ -15,7 +15,7 @@ Anything inside the scritps folder will be checked by TypeScript. If you want to
 
 <img width="383" height="57" alt="image" src="https://github.com/user-attachments/assets/76d24568-1d9c-4c22-9a1d-bc55a86458c3" />
 
-Now, you will also want to download an extension for TypeScript/JavaScript
+Finally, you will also want to download an extension for TypeScript/JavaScript. Then everything should work.
 
 How to Use:
 
