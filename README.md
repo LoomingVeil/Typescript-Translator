@@ -1,10 +1,21 @@
 This project is aimed at making scripting with CustomNPC+ easier. CustomNPC+ as well as ExtendedScripts make avaialable thier API's which, for the most part, are just a collection of java interfaces that normally you would use for modding purposes. 
-Instead, this project converts them into TypeScript files. Since scripting is done in javascript, the TypeScript can be used to tell your IDE (such as VSCode) what is happening and what type your variables are. 
+Instead, this project converts them into TypeScript files. Since scripting is done in JavaScript, the TypeScript can be used to tell your IDE (such as VSCode) what is happening and what type your variables are. 
 Even better, when it knows what type your variables are it can list all the available functions for that type.
 
 Setup:
 
+There are two components to this project. First is the translator and second are the translated scripts. 
 
+The translator can be used to translate Java interfaces into typescript.
+Although I do not know of any such cases, it is likely this program has applications outside of just CustomNPC+ and ExtendedScripts.
+
+The translated scripts is what I expect most people to be here for. I only know for certain that this works in VSCode.
+You should setup your files as seen below. src (rename ts_src) and tsconfig.json are downloaded from here while Scripts is a folder you create yourself.
+Anything inside the scritps folder will be checked by TypeScript. If you want to change the folder's name or add more folders, you can modify tsconfig.json
+
+<img width="383" height="57" alt="image" src="https://github.com/user-attachments/assets/76d24568-1d9c-4c22-9a1d-bc55a86458c3" />
+
+Now, you will also want to download an extension for TypeScript/JavaScript
 
 How to Use:
 
@@ -63,6 +74,11 @@ For example NpcEvent.InteractEvent inherits from INpcEvent.InteractEvent. NpcEve
 public final IPlayer player
 ```
 Because it is public, it is accessable even though there is no indication as such on the javadocs.
+
+Now, you have the tools to do just about anything. However, there is one more thing you should know in case you do not figure it out just by trying.
+Global constants like API and extAPI if you use Extended Scripts will not exist on their own. You must import them. This is quite simple.
+Just like when making type annotations, you can begin typing the name of the global object and it should come up in the list.
+Then press TAB to autocomplete and import it. Keep in mind that unlike type annotations, imports have to be removed before running the script ingame.
 
 
 
