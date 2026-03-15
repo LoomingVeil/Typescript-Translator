@@ -1,4 +1,4 @@
-This project is aimed at making scripting with CustomNPC+ easier. CustomNPC+ as well as ExtendedScripts make avaialable thier API's which, for the most part, are just a collection of java interfaces that normally you would use for modding purposes. 
+This project is aimed at making scripting with CustomNpc+ easier. CustomNpc+ as well as ExtendedScripts make avaialable thier API's which, for the most part, are just a collection of java interfaces that normally you would use for modding purposes. 
 Instead, this project converts them into TypeScript files. Since scripting is done in JavaScript, the TypeScript can be used to tell your IDE (such as VSCode) what is happening and what type your variables are. 
 Even better, when it knows what type your variables are it can list all the available functions for that type.
 
@@ -7,10 +7,23 @@ Setup:
 There are two components to this project. First is the translator and second are the translated scripts. 
 
 The translator can be used to translate Java interfaces into typescript.
-Although I do not know of any such cases, it is likely this program has applications outside of just CustomNPC+ and ExtendedScripts.
+Although I do not know of any such cases, it is likely this program has applications outside of just CustomNpc+ and Extended Scripts.
+
+**If you want to translate source files:**
+
+The ts_src folder contains type information related to both CustomNpc+ and Extended Scripts. If you want only the CustomNpc+ data, you will
+have to run the translator on the CustomNpc+ API. The only difference is that you will have some extra functions that will not work if ExtendedScripts is installed so
+if you can deal with that, you can skip the next step.
+
+To use the translator, first clone the repository. Next in the root folder, the same level as ts_src, you will want to make a folder called java_src. Inside of java_src you will place
+the files. If you want to use CustomNpc+'s API, you can find it [here]([url](https://github.com/KAMKEEL/CustomNPC-Plus-API)). For CustomNpc+'s API, I recommend taking out all the contents
+of java and placing them in java_src just so there is not a needless folder. Then, go to JavaToTypeScript.java, look on line 33. Add/remove/comment out any of the types you do not need.
+For only CustomNpc+, you only need API. The final step is to run the program. It will replace the files in ts_src with the files you need for the next step below.
+
+**If you want to use the source files that come with the repository:**
 
 The translated scripts is what I expect most people to be here for. I only know for certain that this works in VSCode.
-You should setup your files as seen below. src (rename ts_src) and tsconfig.json are downloaded from here while Scripts is a folder you create yourself.
+You should setup your files as seen below. src (rename ts_src) and tsconfig.json are downloaded from this repository while Scripts is a folder you create yourself.
 Anything inside the scritps folder will be checked by TypeScript. If you want to change the folder's name or add more folders, you can modify tsconfig.json
 
 <img width="383" height="57" alt="image" src="https://github.com/user-attachments/assets/76d24568-1d9c-4c22-9a1d-bc55a86458c3" />
