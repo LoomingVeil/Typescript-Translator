@@ -22,7 +22,8 @@ For only CustomNpc+, you only need API. The final step is to run the program. It
 
 **If you want to use the source files that come with the repository:**
 
-The translated scripts is what I expect most people to be here for. I only know for certain that this works in VSCode.
+The translated scripts is what I expect most people to be here for. It should also be noted that the files provided may not be up to date which would require you to use the step above. 
+Also, I only know for certain that this works in VSCode, however, I have heard it should work fine in IntelliJ.
 You should setup your files as seen below. src (rename ts_src) and tsconfig.json are downloaded from this repository while Scripts is a folder you create yourself.
 Anything inside the scritps folder will be checked by TypeScript. If you want to change the folder's name or add more folders, you can modify tsconfig.json
 
