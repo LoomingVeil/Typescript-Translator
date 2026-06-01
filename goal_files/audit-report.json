@@ -1,0 +1,138 @@
+{
+  "generatedAt": "2026-05-27T02:07:21.248Z",
+  "translatorRoot": "Typescript Translator/ts_src",
+  "authoringRoot": "authoring-types",
+  "eventFiles": 20,
+  "authoringHooks": 154,
+  "staticNamespaces": [
+    {
+      "namespace": "extAPI",
+      "file": "com/veil/extendedscripts/extendedapi/AbstractExtendedAPI.d.ts"
+    },
+    {
+      "namespace": "AnimationType",
+      "file": "com/veil/extendedscripts/extendedapi/constants/IAnimationType.d.ts"
+    },
+    {
+      "namespace": "AttributeSection",
+      "file": "com/veil/extendedscripts/extendedapi/constants/IAttributeSection.d.ts"
+    },
+    {
+      "namespace": "AttributeValueType",
+      "file": "com/veil/extendedscripts/extendedapi/constants/IAttributeValueType.d.ts"
+    },
+    {
+      "namespace": "BlockSide",
+      "file": "com/veil/extendedscripts/extendedapi/constants/IBlockSide.d.ts"
+    },
+    {
+      "namespace": "Color",
+      "file": "com/veil/extendedscripts/extendedapi/constants/IColorCodes.d.ts"
+    },
+    {
+      "namespace": "Effect",
+      "file": "com/veil/extendedscripts/extendedapi/constants/IEffect.d.ts"
+    },
+    {
+      "namespace": "EntityType",
+      "file": "com/veil/extendedscripts/extendedapi/constants/IEntityType.d.ts"
+    },
+    {
+      "namespace": "ItemType",
+      "file": "com/veil/extendedscripts/extendedapi/constants/IItemType.d.ts"
+    },
+    {
+      "namespace": "UseAction",
+      "file": "com/veil/extendedscripts/extendedapi/constants/IItemUseAction.d.ts"
+    },
+    {
+      "namespace": "Job",
+      "file": "com/veil/extendedscripts/extendedapi/constants/IJobType.d.ts"
+    },
+    {
+      "namespace": "Key",
+      "file": "com/veil/extendedscripts/extendedapi/constants/IKeys.d.ts"
+    },
+    {
+      "namespace": "MouseButton",
+      "file": "com/veil/extendedscripts/extendedapi/constants/IMouseButton.d.ts"
+    },
+    {
+      "namespace": "Particle",
+      "file": "com/veil/extendedscripts/extendedapi/constants/IParticleType.d.ts"
+    },
+    {
+      "namespace": "Role",
+      "file": "com/veil/extendedscripts/extendedapi/constants/IRoleType.d.ts"
+    },
+    {
+      "namespace": "SkinType",
+      "file": "com/veil/extendedscripts/extendedapi/constants/ISkinType.d.ts"
+    },
+    {
+      "namespace": "ShapeMaker",
+      "file": "com/veil/extendedscripts/extendedapi/IShapeMaker.d.ts"
+    },
+    {
+      "namespace": "Java",
+      "file": "IJava.d.ts"
+    },
+    {
+      "namespace": "API",
+      "file": "noppes/npcs/api/AbstractNpcAPI.d.ts"
+    }
+  ],
+  "duplicateBasenames": [
+    "noppes/npcs/api/ability/IAbilityHandler.d.ts",
+    "noppes/npcs/api/gui/ILine.d.ts",
+    "noppes/npcs/api/handler/data/ILine.d.ts",
+    "noppes/npcs/api/handler/IAbilityHandler.d.ts"
+  ],
+  "missingTypes": {
+    "promotedGlobals": [
+      "PooledMutableBlockPos",
+      "Entity",
+      "ProfileEvent",
+      "EnumFacing",
+      "NBTTagCompound",
+      "WorldServer",
+      "EventBus",
+      "World",
+      "TileEntity",
+      "Entry",
+      "Container",
+      "ResourceLocation",
+      "BlockData",
+      "IInventory",
+      "DamageSource",
+      "InventoryEnderChest",
+      "EffectEvent",
+      "noppes",
+      "IFrameEvent",
+      "InventoryPlayer",
+      "Block",
+      "Event",
+      "Slot",
+      "INpc",
+      "ItemStack",
+      "MutableBlockPos",
+      "EntityCustomProjectile"
+    ],
+    "skippedGlobals": [
+      "Iterable",
+      "HashMap",
+      "Logger",
+      "Function",
+      "Consumer",
+      "List",
+      "Queue",
+      "ImmutableMap",
+      "Collection",
+      "Class",
+      "File",
+      "Map",
+      "BiConsumer"
+    ]
+  },
+  "unresolvedHookTags": []
+}

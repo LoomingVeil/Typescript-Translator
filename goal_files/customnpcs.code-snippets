@@ -1,0 +1,2004 @@
+{
+  "abilityComplete": {
+    "prefix": [
+      "abilityComplete",
+      "function abilityComplete"
+    ],
+    "body": [
+      "/** @param {IAbilityEvent.CompleteEvent} event */",
+      "function abilityComplete(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IAbilityEvent.CompleteEvent"
+  },
+  "abilityExecute": {
+    "prefix": [
+      "abilityExecute",
+      "function abilityExecute"
+    ],
+    "body": [
+      "/** @param {IAbilityEvent.ExecuteEvent} event */",
+      "function abilityExecute(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IAbilityEvent.ExecuteEvent"
+  },
+  "abilityHit": {
+    "prefix": [
+      "abilityHit",
+      "function abilityHit"
+    ],
+    "body": [
+      "/** @param {IAbilityEvent.HitEvent} event */",
+      "function abilityHit(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IAbilityEvent.HitEvent"
+  },
+  "abilityInterrupt": {
+    "prefix": [
+      "abilityInterrupt",
+      "function abilityInterrupt"
+    ],
+    "body": [
+      "/** @param {IAbilityEvent.InterruptEvent} event */",
+      "function abilityInterrupt(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IAbilityEvent.InterruptEvent"
+  },
+  "abilityStart": {
+    "prefix": [
+      "abilityStart",
+      "function abilityStart"
+    ],
+    "body": [
+      "/** @param {IAbilityEvent.StartEvent} event */",
+      "function abilityStart(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IAbilityEvent.StartEvent"
+  },
+  "abilityTick": {
+    "prefix": [
+      "abilityTick",
+      "function abilityTick"
+    ],
+    "body": [
+      "/** @param {IAbilityEvent.TickEvent} event */",
+      "function abilityTick(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IAbilityEvent.TickEvent"
+  },
+  "abilityToggle": {
+    "prefix": [
+      "abilityToggle",
+      "function abilityToggle"
+    ],
+    "body": [
+      "/** @param {IAbilityEvent.ToggleEvent} event */",
+      "function abilityToggle(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IAbilityEvent.ToggleEvent"
+  },
+  "abilityToggleUpdate": {
+    "prefix": [
+      "abilityToggleUpdate",
+      "function abilityToggleUpdate"
+    ],
+    "body": [
+      "/** @param {IAbilityEvent.ToggleUpdateEvent} event */",
+      "function abilityToggleUpdate(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IAbilityEvent.ToggleUpdateEvent"
+  },
+  "animationEnd": {
+    "prefix": [
+      "animationEnd",
+      "function animationEnd"
+    ],
+    "body": [
+      "/** @param {IAnimationEvent.Ended} event */",
+      "function animationEnd(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IAnimationEvent.Ended"
+  },
+  "animationFrameEnter": {
+    "prefix": [
+      "animationFrameEnter",
+      "function animationFrameEnter"
+    ],
+    "body": [
+      "/** @param {IAnimationEvent.IFrameEvent.Entered} event */",
+      "function animationFrameEnter(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IAnimationEvent.IFrameEvent.Entered"
+  },
+  "animationFrameExit": {
+    "prefix": [
+      "animationFrameExit",
+      "function animationFrameExit"
+    ],
+    "body": [
+      "/** @param {IAnimationEvent.IFrameEvent.Exited} event */",
+      "function animationFrameExit(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IAnimationEvent.IFrameEvent.Exited"
+  },
+  "animationIFrame": {
+    "prefix": [
+      "animationIFrame",
+      "function animationIFrame"
+    ],
+    "body": [
+      "/** @param {IAnimationEvent.IFrameEvent} event */",
+      "function animationIFrame(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IAnimationEvent.IFrameEvent"
+  },
+  "animationStart": {
+    "prefix": [
+      "animationStart",
+      "function animationStart"
+    ],
+    "body": [
+      "/** @param {IAnimationEvent.Started} event */",
+      "function animationStart(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IAnimationEvent.Started"
+  },
+  "auctionBid": {
+    "prefix": [
+      "auctionBid",
+      "function auctionBid"
+    ],
+    "body": [
+      "/** @param {IAuctionEvent.BidEvent} event */",
+      "function auctionBid(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IAuctionEvent.BidEvent"
+  },
+  "auctionBuyout": {
+    "prefix": [
+      "auctionBuyout",
+      "function auctionBuyout"
+    ],
+    "body": [
+      "/** @param {IAuctionEvent.BuyoutEvent} event */",
+      "function auctionBuyout(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IAuctionEvent.BuyoutEvent"
+  },
+  "auctionCancel": {
+    "prefix": [
+      "auctionCancel",
+      "function auctionCancel"
+    ],
+    "body": [
+      "/** @param {IAuctionEvent.CancelEvent} event */",
+      "function auctionCancel(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IAuctionEvent.CancelEvent"
+  },
+  "auctionClaim": {
+    "prefix": [
+      "auctionClaim",
+      "function auctionClaim"
+    ],
+    "body": [
+      "/** @param {IAuctionEvent.ClaimEvent} event */",
+      "function auctionClaim(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IAuctionEvent.ClaimEvent"
+  },
+  "auctionCreate": {
+    "prefix": [
+      "auctionCreate",
+      "function auctionCreate"
+    ],
+    "body": [
+      "/** @param {IAuctionEvent.CreateEvent} event */",
+      "function auctionCreate(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IAuctionEvent.CreateEvent"
+  },
+  "blockBroken": {
+    "prefix": [
+      "blockBroken",
+      "function blockBroken"
+    ],
+    "body": [
+      "/** @param {IBlockEvent.BreakEvent} event */",
+      "function blockBroken(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IBlockEvent.BreakEvent"
+  },
+  "blockClicked": {
+    "prefix": [
+      "blockClicked",
+      "function blockClicked"
+    ],
+    "body": [
+      "/** @param {IBlockEvent.ClickedEvent} event */",
+      "function blockClicked(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IBlockEvent.ClickedEvent"
+  },
+  "blockCollided": {
+    "prefix": [
+      "blockCollided",
+      "function blockCollided"
+    ],
+    "body": [
+      "/** @param {IBlockEvent.CollidedEvent} event */",
+      "function blockCollided(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IBlockEvent.CollidedEvent"
+  },
+  "blockExploded": {
+    "prefix": [
+      "blockExploded",
+      "function blockExploded"
+    ],
+    "body": [
+      "/** @param {IBlockEvent.ExplodedEvent} event */",
+      "function blockExploded(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IBlockEvent.ExplodedEvent"
+  },
+  "blockFallenUpon": {
+    "prefix": [
+      "blockFallenUpon",
+      "function blockFallenUpon"
+    ],
+    "body": [
+      "/** @param {IBlockEvent.EntityFallenUponEvent} event */",
+      "function blockFallenUpon(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IBlockEvent.EntityFallenUponEvent"
+  },
+  "blockHarvested": {
+    "prefix": [
+      "blockHarvested",
+      "function blockHarvested"
+    ],
+    "body": [
+      "/** @param {IBlockEvent.HarvestedEvent} event */",
+      "function blockHarvested(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IBlockEvent.HarvestedEvent"
+  },
+  "blockInit": {
+    "prefix": [
+      "blockInit",
+      "function blockInit"
+    ],
+    "body": [
+      "/** @param {IBlockEvent.InitEvent} event */",
+      "function blockInit(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IBlockEvent.InitEvent"
+  },
+  "blockInteract": {
+    "prefix": [
+      "blockInteract",
+      "function blockInteract"
+    ],
+    "body": [
+      "/** @param {IBlockEvent.InteractEvent} event */",
+      "function blockInteract(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IBlockEvent.InteractEvent"
+  },
+  "blockNeighborChanged": {
+    "prefix": [
+      "blockNeighborChanged",
+      "function blockNeighborChanged"
+    ],
+    "body": [
+      "/** @param {IBlockEvent.NeighborChangedEvent} event */",
+      "function blockNeighborChanged(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IBlockEvent.NeighborChangedEvent"
+  },
+  "blockRainFilled": {
+    "prefix": [
+      "blockRainFilled",
+      "function blockRainFilled"
+    ],
+    "body": [
+      "/** @param {IBlockEvent.RainFillEvent} event */",
+      "function blockRainFilled(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IBlockEvent.RainFillEvent"
+  },
+  "blockRedstone": {
+    "prefix": [
+      "blockRedstone",
+      "function blockRedstone"
+    ],
+    "body": [
+      "/** @param {IBlockEvent.RedstoneEvent} event */",
+      "function blockRedstone(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IBlockEvent.RedstoneEvent"
+  },
+  "blockTick": {
+    "prefix": [
+      "blockTick",
+      "function blockTick"
+    ],
+    "body": [
+      "/** @param {IBlockEvent.UpdateEvent} event */",
+      "function blockTick(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IBlockEvent.UpdateEvent"
+  },
+  "blockTimer": {
+    "prefix": [
+      "blockTimer",
+      "function blockTimer"
+    ],
+    "body": [
+      "/** @param {IBlockEvent.TimerEvent} event */",
+      "function blockTimer(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IBlockEvent.TimerEvent"
+  },
+  "chainComplete": {
+    "prefix": [
+      "chainComplete",
+      "function chainComplete"
+    ],
+    "body": [
+      "/** @param {IChainEvent.CompleteEvent} event */",
+      "function chainComplete(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IChainEvent.CompleteEvent"
+  },
+  "chainInterrupt": {
+    "prefix": [
+      "chainInterrupt",
+      "function chainInterrupt"
+    ],
+    "body": [
+      "/** @param {IChainEvent.InterruptEvent} event */",
+      "function chainInterrupt(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IChainEvent.InterruptEvent"
+  },
+  "chainNext": {
+    "prefix": [
+      "chainNext",
+      "function chainNext"
+    ],
+    "body": [
+      "/** @param {IChainEvent.NextEvent} event */",
+      "function chainNext(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IChainEvent.NextEvent"
+  },
+  "chainStart": {
+    "prefix": [
+      "chainStart",
+      "function chainStart"
+    ],
+    "body": [
+      "/** @param {IChainEvent.StartEvent} event */",
+      "function chainStart(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IChainEvent.StartEvent"
+  },
+  "customGuiButton": {
+    "prefix": [
+      "customGuiButton",
+      "function customGuiButton"
+    ],
+    "body": [
+      "/** @param {ICustomGuiEvent.ButtonEvent} event */",
+      "function customGuiButton(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for ICustomGuiEvent.ButtonEvent"
+  },
+  "customGuiClosed": {
+    "prefix": [
+      "customGuiClosed",
+      "function customGuiClosed"
+    ],
+    "body": [
+      "/** @param {ICustomGuiEvent.CloseEvent} event */",
+      "function customGuiClosed(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for ICustomGuiEvent.CloseEvent"
+  },
+  "customGuiScroll": {
+    "prefix": [
+      "customGuiScroll",
+      "function customGuiScroll"
+    ],
+    "body": [
+      "/** @param {ICustomGuiEvent.ScrollEvent} event */",
+      "function customGuiScroll(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for ICustomGuiEvent.ScrollEvent"
+  },
+  "customGuiSlot": {
+    "prefix": [
+      "customGuiSlot",
+      "function customGuiSlot"
+    ],
+    "body": [
+      "/** @param {ICustomGuiEvent.SlotEvent} event */",
+      "function customGuiSlot(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for ICustomGuiEvent.SlotEvent"
+  },
+  "customGuiSlotClicked": {
+    "prefix": [
+      "customGuiSlotClicked",
+      "function customGuiSlotClicked"
+    ],
+    "body": [
+      "/** @param {ICustomGuiEvent.SlotClickEvent} event */",
+      "function customGuiSlotClicked(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for ICustomGuiEvent.SlotClickEvent"
+  },
+  "customGuiTextfield": {
+    "prefix": [
+      "customGuiTextfield",
+      "function customGuiTextfield"
+    ],
+    "body": [
+      "/** @param {ICustomGuiEvent.UnfocusedEvent} event */",
+      "function customGuiTextfield(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for ICustomGuiEvent.UnfocusedEvent"
+  },
+  "customNPCsOnCNPCNaturalSpawn": {
+    "prefix": [
+      "customNPCsOnCNPCNaturalSpawn",
+      "function customNPCsOnCNPCNaturalSpawn"
+    ],
+    "body": [
+      "/** @param {ICustomNPCsEvent.CNPCNaturalSpawnEvent} event */",
+      "function customNPCsOnCNPCNaturalSpawn(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for ICustomNPCsEvent.CNPCNaturalSpawnEvent"
+  },
+  "customNPCsScriptedCommand": {
+    "prefix": [
+      "customNPCsScriptedCommand",
+      "function customNPCsScriptedCommand"
+    ],
+    "body": [
+      "/** @param {ICustomNPCsEvent.ScriptedCommandEvent} event */",
+      "function customNPCsScriptedCommand(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for ICustomNPCsEvent.ScriptedCommandEvent"
+  },
+  "dialogClose": {
+    "prefix": [
+      "dialogClose",
+      "function dialogClose"
+    ],
+    "body": [
+      "/** @param {IDialogEvent.DialogClosed} event */",
+      "function dialogClose(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IDialogEvent.DialogClosed"
+  },
+  "dialogOpen": {
+    "prefix": [
+      "dialogOpen",
+      "function dialogOpen"
+    ],
+    "body": [
+      "/** @param {IDialogEvent.DialogOpen} event */",
+      "function dialogOpen(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IDialogEvent.DialogOpen"
+  },
+  "dialogOption": {
+    "prefix": [
+      "dialogOption",
+      "function dialogOption"
+    ],
+    "body": [
+      "/** @param {IDialogEvent.DialogOption} event */",
+      "function dialogOption(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IDialogEvent.DialogOption"
+  },
+  "energyBarrierDestroyed": {
+    "prefix": [
+      "energyBarrierDestroyed",
+      "function energyBarrierDestroyed"
+    ],
+    "body": [
+      "/** @param {IEnergyBarrierEvent.DestroyedEvent} event */",
+      "function energyBarrierDestroyed(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IEnergyBarrierEvent.DestroyedEvent"
+  },
+  "energyBarrierHit": {
+    "prefix": [
+      "energyBarrierHit",
+      "function energyBarrierHit"
+    ],
+    "body": [
+      "/** @param {IEnergyBarrierEvent.HitEvent} event */",
+      "function energyBarrierHit(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IEnergyBarrierEvent.HitEvent"
+  },
+  "energyBarrierSpawned": {
+    "prefix": [
+      "energyBarrierSpawned",
+      "function energyBarrierSpawned"
+    ],
+    "body": [
+      "/** @param {IEnergyBarrierEvent.SpawnedEvent} event */",
+      "function energyBarrierSpawned(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IEnergyBarrierEvent.SpawnedEvent"
+  },
+  "energyBarrierTick": {
+    "prefix": [
+      "energyBarrierTick",
+      "function energyBarrierTick"
+    ],
+    "body": [
+      "/** @param {IEnergyBarrierEvent.UpdateEvent} event */",
+      "function energyBarrierTick(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IEnergyBarrierEvent.UpdateEvent"
+  },
+  "energyProjectileBlockImpact": {
+    "prefix": [
+      "energyProjectileBlockImpact",
+      "function energyProjectileBlockImpact"
+    ],
+    "body": [
+      "/** @param {IEnergyProjectileEvent.BlockImpactEvent} event */",
+      "function energyProjectileBlockImpact(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IEnergyProjectileEvent.BlockImpactEvent"
+  },
+  "energyProjectileEntityImpact": {
+    "prefix": [
+      "energyProjectileEntityImpact",
+      "function energyProjectileEntityImpact"
+    ],
+    "body": [
+      "/** @param {IEnergyProjectileEvent.EntityImpactEvent} event */",
+      "function energyProjectileEntityImpact(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IEnergyProjectileEvent.EntityImpactEvent"
+  },
+  "energyProjectileExpired": {
+    "prefix": [
+      "energyProjectileExpired",
+      "function energyProjectileExpired"
+    ],
+    "body": [
+      "/** @param {IEnergyProjectileEvent.ExpiredEvent} event */",
+      "function energyProjectileExpired(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IEnergyProjectileEvent.ExpiredEvent"
+  },
+  "energyProjectileFired": {
+    "prefix": [
+      "energyProjectileFired",
+      "function energyProjectileFired"
+    ],
+    "body": [
+      "/** @param {IEnergyProjectileEvent.FiredEvent} event */",
+      "function energyProjectileFired(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IEnergyProjectileEvent.FiredEvent"
+  },
+  "energyProjectileTick": {
+    "prefix": [
+      "energyProjectileTick",
+      "function energyProjectileTick"
+    ],
+    "body": [
+      "/** @param {IEnergyProjectileEvent.UpdateEvent} event */",
+      "function energyProjectileTick(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IEnergyProjectileEvent.UpdateEvent"
+  },
+  "factionPoints": {
+    "prefix": [
+      "factionPoints",
+      "function factionPoints"
+    ],
+    "body": [
+      "/** @param {IFactionEvent.FactionPoints} event */",
+      "function factionPoints(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IFactionEvent.FactionPoints"
+  },
+  "forgeEntity": {
+    "prefix": [
+      "forgeEntity",
+      "function forgeEntity"
+    ],
+    "body": [
+      "/** @param {IForgeEvent.EntityEvent} event */",
+      "function forgeEntity(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IForgeEvent.EntityEvent"
+  },
+  "forgeInit": {
+    "prefix": [
+      "forgeInit",
+      "function forgeInit"
+    ],
+    "body": [
+      "/** @param {IForgeEvent.InitEvent} event */",
+      "function forgeInit(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IForgeEvent.InitEvent"
+  },
+  "forgeWorld": {
+    "prefix": [
+      "forgeWorld",
+      "function forgeWorld"
+    ],
+    "body": [
+      "/** @param {IForgeEvent.WorldEvent} event */",
+      "function forgeWorld(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IForgeEvent.WorldEvent"
+  },
+  "itemAttack": {
+    "prefix": [
+      "itemAttack",
+      "function itemAttack"
+    ],
+    "body": [
+      "/** @param {IItemEvent.AttackEvent} event */",
+      "function itemAttack(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IItemEvent.AttackEvent"
+  },
+  "itemBreakItem": {
+    "prefix": [
+      "itemBreakItem",
+      "function itemBreakItem"
+    ],
+    "body": [
+      "/** @param {IItemEvent.BreakItem} event */",
+      "function itemBreakItem(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IItemEvent.BreakItem"
+  },
+  "itemFinishItem": {
+    "prefix": [
+      "itemFinishItem",
+      "function itemFinishItem"
+    ],
+    "body": [
+      "/** @param {IItemEvent.FinishUsingItem} event */",
+      "function itemFinishItem(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IItemEvent.FinishUsingItem"
+  },
+  "itemInit": {
+    "prefix": [
+      "itemInit",
+      "function itemInit"
+    ],
+    "body": [
+      "/** @param {IItemEvent.InitEvent} event */",
+      "function itemInit(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IItemEvent.InitEvent"
+  },
+  "itemInteract": {
+    "prefix": [
+      "itemInteract",
+      "function itemInteract"
+    ],
+    "body": [
+      "/** @param {IItemEvent.InteractEvent} event */",
+      "function itemInteract(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IItemEvent.InteractEvent"
+  },
+  "itemPickedUp": {
+    "prefix": [
+      "itemPickedUp",
+      "function itemPickedUp"
+    ],
+    "body": [
+      "/** @param {IItemEvent.PickedUpEvent} event */",
+      "function itemPickedUp(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IItemEvent.PickedUpEvent"
+  },
+  "itemRepairItem": {
+    "prefix": [
+      "itemRepairItem",
+      "function itemRepairItem"
+    ],
+    "body": [
+      "/** @param {IItemEvent.RepairItem} event */",
+      "function itemRepairItem(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IItemEvent.RepairItem"
+  },
+  "itemRightClick": {
+    "prefix": [
+      "itemRightClick",
+      "function itemRightClick"
+    ],
+    "body": [
+      "/** @param {IItemEvent.RightClickEvent} event */",
+      "function itemRightClick(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IItemEvent.RightClickEvent"
+  },
+  "itemSpawn": {
+    "prefix": [
+      "itemSpawn",
+      "function itemSpawn"
+    ],
+    "body": [
+      "/** @param {IItemEvent.SpawnEvent} event */",
+      "function itemSpawn(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IItemEvent.SpawnEvent"
+  },
+  "itemStartItem": {
+    "prefix": [
+      "itemStartItem",
+      "function itemStartItem"
+    ],
+    "body": [
+      "/** @param {IItemEvent.StartUsingItem} event */",
+      "function itemStartItem(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IItemEvent.StartUsingItem"
+  },
+  "itemStopItem": {
+    "prefix": [
+      "itemStopItem",
+      "function itemStopItem"
+    ],
+    "body": [
+      "/** @param {IItemEvent.StopUsingItem} event */",
+      "function itemStopItem(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IItemEvent.StopUsingItem"
+  },
+  "itemTick": {
+    "prefix": [
+      "itemTick",
+      "function itemTick"
+    ],
+    "body": [
+      "/** @param {IItemEvent.UpdateEvent} event */",
+      "function itemTick(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IItemEvent.UpdateEvent"
+  },
+  "itemTossed": {
+    "prefix": [
+      "itemTossed",
+      "function itemTossed"
+    ],
+    "body": [
+      "/** @param {IItemEvent.TossedEvent} event */",
+      "function itemTossed(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IItemEvent.TossedEvent"
+  },
+  "itemUsingItem": {
+    "prefix": [
+      "itemUsingItem",
+      "function itemUsingItem"
+    ],
+    "body": [
+      "/** @param {IItemEvent.UsingItem} event */",
+      "function itemUsingItem(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IItemEvent.UsingItem"
+  },
+  "linkedItemBuildingItem": {
+    "prefix": [
+      "linkedItemBuildingItem",
+      "function linkedItemBuildingItem"
+    ],
+    "body": [
+      "/** @param {ILinkedItemEvent.BuildEvent} event */",
+      "function linkedItemBuildingItem(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for ILinkedItemEvent.BuildEvent"
+  },
+  "linkedItemVersionChanged": {
+    "prefix": [
+      "linkedItemVersionChanged",
+      "function linkedItemVersionChanged"
+    ],
+    "body": [
+      "/** @param {ILinkedItemEvent.VersionChangeEvent} event */",
+      "function linkedItemVersionChanged(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for ILinkedItemEvent.VersionChangeEvent"
+  },
+  "npcCollide": {
+    "prefix": [
+      "npcCollide",
+      "function npcCollide"
+    ],
+    "body": [
+      "/** @param {INpcEvent.CollideEvent} event */",
+      "function npcCollide(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for INpcEvent.CollideEvent"
+  },
+  "npcDamaged": {
+    "prefix": [
+      "npcDamaged",
+      "function npcDamaged"
+    ],
+    "body": [
+      "/** @param {INpcEvent.DamagedEvent} event */",
+      "function npcDamaged(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for INpcEvent.DamagedEvent"
+  },
+  "npcDialog": {
+    "prefix": [
+      "npcDialog",
+      "function npcDialog"
+    ],
+    "body": [
+      "/** @param {INpcEvent.DialogEvent} event */",
+      "function npcDialog(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for INpcEvent.DialogEvent"
+  },
+  "npcDialogClosed": {
+    "prefix": [
+      "npcDialogClosed",
+      "function npcDialogClosed"
+    ],
+    "body": [
+      "/** @param {INpcEvent.DialogClosedEvent} event */",
+      "function npcDialogClosed(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for INpcEvent.DialogClosedEvent"
+  },
+  "npcInit": {
+    "prefix": [
+      "npcInit",
+      "function npcInit"
+    ],
+    "body": [
+      "/** @param {INpcEvent.InitEvent} event */",
+      "function npcInit(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for INpcEvent.InitEvent"
+  },
+  "npcInteract": {
+    "prefix": [
+      "npcInteract",
+      "function npcInteract"
+    ],
+    "body": [
+      "/** @param {INpcEvent.InteractEvent} event */",
+      "function npcInteract(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for INpcEvent.InteractEvent"
+  },
+  "npcKilled": {
+    "prefix": [
+      "npcKilled",
+      "function npcKilled"
+    ],
+    "body": [
+      "/** @param {INpcEvent.DiedEvent} event */",
+      "function npcKilled(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for INpcEvent.DiedEvent"
+  },
+  "npcKills": {
+    "prefix": [
+      "npcKills",
+      "function npcKills"
+    ],
+    "body": [
+      "/** @param {INpcEvent.KilledEntityEvent} event */",
+      "function npcKills(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for INpcEvent.KilledEntityEvent"
+  },
+  "npcMeleeAttack": {
+    "prefix": [
+      "npcMeleeAttack",
+      "function npcMeleeAttack"
+    ],
+    "body": [
+      "/** @param {INpcEvent.MeleeAttackEvent} event */",
+      "function npcMeleeAttack(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for INpcEvent.MeleeAttackEvent"
+  },
+  "npcMeleeSwing": {
+    "prefix": [
+      "npcMeleeSwing",
+      "function npcMeleeSwing"
+    ],
+    "body": [
+      "/** @param {INpcEvent.SwingEvent} event */",
+      "function npcMeleeSwing(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for INpcEvent.SwingEvent"
+  },
+  "npcRangedLaunched": {
+    "prefix": [
+      "npcRangedLaunched",
+      "function npcRangedLaunched"
+    ],
+    "body": [
+      "/** @param {INpcEvent.RangedLaunchedEvent} event */",
+      "function npcRangedLaunched(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for INpcEvent.RangedLaunchedEvent"
+  },
+  "npcTarget": {
+    "prefix": [
+      "npcTarget",
+      "function npcTarget"
+    ],
+    "body": [
+      "/** @param {INpcEvent.TargetEvent} event */",
+      "function npcTarget(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for INpcEvent.TargetEvent"
+  },
+  "npcTargetLost": {
+    "prefix": [
+      "npcTargetLost",
+      "function npcTargetLost"
+    ],
+    "body": [
+      "/** @param {INpcEvent.TargetLostEvent} event */",
+      "function npcTargetLost(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for INpcEvent.TargetLostEvent"
+  },
+  "npcTick": {
+    "prefix": [
+      "npcTick",
+      "function npcTick"
+    ],
+    "body": [
+      "/** @param {INpcEvent.UpdateEvent} event */",
+      "function npcTick(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for INpcEvent.UpdateEvent"
+  },
+  "npcTimer": {
+    "prefix": [
+      "npcTimer",
+      "function npcTimer"
+    ],
+    "body": [
+      "/** @param {INpcEvent.TimerEvent} event */",
+      "function npcTimer(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for INpcEvent.TimerEvent"
+  },
+  "partyDisband": {
+    "prefix": [
+      "partyDisband",
+      "function partyDisband"
+    ],
+    "body": [
+      "/** @param {IPartyEvent.PartyDisbandEvent} event */",
+      "function partyDisband(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IPartyEvent.PartyDisbandEvent"
+  },
+  "partyInvite": {
+    "prefix": [
+      "partyInvite",
+      "function partyInvite"
+    ],
+    "body": [
+      "/** @param {IPartyEvent.PartyInviteEvent} event */",
+      "function partyInvite(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IPartyEvent.PartyInviteEvent"
+  },
+  "partyKick": {
+    "prefix": [
+      "partyKick",
+      "function partyKick"
+    ],
+    "body": [
+      "/** @param {IPartyEvent.PartyKickEvent} event */",
+      "function partyKick(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IPartyEvent.PartyKickEvent"
+  },
+  "partyLeave": {
+    "prefix": [
+      "partyLeave",
+      "function partyLeave"
+    ],
+    "body": [
+      "/** @param {IPartyEvent.PartyLeaveEvent} event */",
+      "function partyLeave(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IPartyEvent.PartyLeaveEvent"
+  },
+  "partyQuestCompleted": {
+    "prefix": [
+      "partyQuestCompleted",
+      "function partyQuestCompleted"
+    ],
+    "body": [
+      "/** @param {IPartyEvent.PartyQuestCompletedEvent} event */",
+      "function partyQuestCompleted(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IPartyEvent.PartyQuestCompletedEvent"
+  },
+  "partyQuestSet": {
+    "prefix": [
+      "partyQuestSet",
+      "function partyQuestSet"
+    ],
+    "body": [
+      "/** @param {IPartyEvent.PartyQuestSetEvent} event */",
+      "function partyQuestSet(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IPartyEvent.PartyQuestSetEvent"
+  },
+  "partyQuestTurnedIn": {
+    "prefix": [
+      "partyQuestTurnedIn",
+      "function partyQuestTurnedIn"
+    ],
+    "body": [
+      "/** @param {IPartyEvent.PartyQuestTurnedInEvent} event */",
+      "function partyQuestTurnedIn(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IPartyEvent.PartyQuestTurnedInEvent"
+  },
+  "playerAchievement": {
+    "prefix": [
+      "playerAchievement",
+      "function playerAchievement"
+    ],
+    "body": [
+      "/** @param {IPlayerEvent.AchievementEvent} event */",
+      "function playerAchievement(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IPlayerEvent.AchievementEvent"
+  },
+  "playerAttack": {
+    "prefix": [
+      "playerAttack",
+      "function playerAttack"
+    ],
+    "body": [
+      "/** @param {IPlayerEvent.AttackEvent} event */",
+      "function playerAttack(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IPlayerEvent.AttackEvent"
+  },
+  "playerAttacked": {
+    "prefix": [
+      "playerAttacked",
+      "function playerAttacked"
+    ],
+    "body": [
+      "/** @param {IPlayerEvent.AttackedEvent} event */",
+      "function playerAttacked(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IPlayerEvent.AttackedEvent"
+  },
+  "playerBonemeal": {
+    "prefix": [
+      "playerBonemeal",
+      "function playerBonemeal"
+    ],
+    "body": [
+      "/** @param {IPlayerEvent.BonemealEvent} event */",
+      "function playerBonemeal(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IPlayerEvent.BonemealEvent"
+  },
+  "playerBreakBlock": {
+    "prefix": [
+      "playerBreakBlock",
+      "function playerBreakBlock"
+    ],
+    "body": [
+      "/** @param {IPlayerEvent.BreakEvent} event */",
+      "function playerBreakBlock(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IPlayerEvent.BreakEvent"
+  },
+  "playerChangedDim": {
+    "prefix": [
+      "playerChangedDim",
+      "function playerChangedDim"
+    ],
+    "body": [
+      "/** @param {IPlayerEvent.ChangedDimension} event */",
+      "function playerChangedDim(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IPlayerEvent.ChangedDimension"
+  },
+  "playerChat": {
+    "prefix": [
+      "playerChat",
+      "function playerChat"
+    ],
+    "body": [
+      "/** @param {IPlayerEvent.ChatEvent} event */",
+      "function playerChat(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IPlayerEvent.ChatEvent"
+  },
+  "playerContainerClosed": {
+    "prefix": [
+      "playerContainerClosed",
+      "function playerContainerClosed"
+    ],
+    "body": [
+      "/** @param {IPlayerEvent.ContainerClosed} event */",
+      "function playerContainerClosed(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IPlayerEvent.ContainerClosed"
+  },
+  "playerContainerOpen": {
+    "prefix": [
+      "playerContainerOpen",
+      "function playerContainerOpen"
+    ],
+    "body": [
+      "/** @param {IPlayerEvent.ContainerOpen} event */",
+      "function playerContainerOpen(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IPlayerEvent.ContainerOpen"
+  },
+  "playerDamaged": {
+    "prefix": [
+      "playerDamaged",
+      "function playerDamaged"
+    ],
+    "body": [
+      "/** @param {IPlayerEvent.DamagedEvent} event */",
+      "function playerDamaged(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IPlayerEvent.DamagedEvent"
+  },
+  "playerDamagedEntity": {
+    "prefix": [
+      "playerDamagedEntity",
+      "function playerDamagedEntity"
+    ],
+    "body": [
+      "/** @param {IPlayerEvent.DamagedEntityEvent} event */",
+      "function playerDamagedEntity(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IPlayerEvent.DamagedEntityEvent"
+  },
+  "playerDrop": {
+    "prefix": [
+      "playerDrop",
+      "function playerDrop"
+    ],
+    "body": [
+      "/** @param {IPlayerEvent.DropEvent} event */",
+      "function playerDrop(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IPlayerEvent.DropEvent"
+  },
+  "playerFall": {
+    "prefix": [
+      "playerFall",
+      "function playerFall"
+    ],
+    "body": [
+      "/** @param {IPlayerEvent.FallEvent} event */",
+      "function playerFall(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IPlayerEvent.FallEvent"
+  },
+  "playerFillBucket": {
+    "prefix": [
+      "playerFillBucket",
+      "function playerFillBucket"
+    ],
+    "body": [
+      "/** @param {IPlayerEvent.FillBucketEvent} event */",
+      "function playerFillBucket(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IPlayerEvent.FillBucketEvent"
+  },
+  "playerFinishItem": {
+    "prefix": [
+      "playerFinishItem",
+      "function playerFinishItem"
+    ],
+    "body": [
+      "/** @param {IPlayerEvent.FinishUsingItem} event */",
+      "function playerFinishItem(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IPlayerEvent.FinishUsingItem"
+  },
+  "playerInit": {
+    "prefix": [
+      "playerInit",
+      "function playerInit"
+    ],
+    "body": [
+      "/** @param {IPlayerEvent.InitEvent} event */",
+      "function playerInit(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IPlayerEvent.InitEvent"
+  },
+  "playerInteract": {
+    "prefix": [
+      "playerInteract",
+      "function playerInteract"
+    ],
+    "body": [
+      "/** @param {IPlayerEvent.InteractEvent} event */",
+      "function playerInteract(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IPlayerEvent.InteractEvent"
+  },
+  "playerJump": {
+    "prefix": [
+      "playerJump",
+      "function playerJump"
+    ],
+    "body": [
+      "/** @param {IPlayerEvent.JumpEvent} event */",
+      "function playerJump(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IPlayerEvent.JumpEvent"
+  },
+  "playerKeyPressed": {
+    "prefix": [
+      "playerKeyPressed",
+      "function playerKeyPressed"
+    ],
+    "body": [
+      "/** @param {IPlayerEvent.KeyPressedEvent} event */",
+      "function playerKeyPressed(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IPlayerEvent.KeyPressedEvent"
+  },
+  "playerKilled": {
+    "prefix": [
+      "playerKilled",
+      "function playerKilled"
+    ],
+    "body": [
+      "/** @param {IPlayerEvent.DiedEvent} event */",
+      "function playerKilled(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IPlayerEvent.DiedEvent"
+  },
+  "playerKills": {
+    "prefix": [
+      "playerKills",
+      "function playerKills"
+    ],
+    "body": [
+      "/** @param {IPlayerEvent.KilledEntityEvent} event */",
+      "function playerKills(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IPlayerEvent.KilledEntityEvent"
+  },
+  "playerLevelUp": {
+    "prefix": [
+      "playerLevelUp",
+      "function playerLevelUp"
+    ],
+    "body": [
+      "/** @param {IPlayerEvent.LevelUpEvent} event */",
+      "function playerLevelUp(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IPlayerEvent.LevelUpEvent"
+  },
+  "playerLightning": {
+    "prefix": [
+      "playerLightning",
+      "function playerLightning"
+    ],
+    "body": [
+      "/** @param {IPlayerEvent.LightningEvent} event */",
+      "function playerLightning(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IPlayerEvent.LightningEvent"
+  },
+  "playerLogin": {
+    "prefix": [
+      "playerLogin",
+      "function playerLogin"
+    ],
+    "body": [
+      "/** @param {IPlayerEvent.LoginEvent} event */",
+      "function playerLogin(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IPlayerEvent.LoginEvent"
+  },
+  "playerLogout": {
+    "prefix": [
+      "playerLogout",
+      "function playerLogout"
+    ],
+    "body": [
+      "/** @param {IPlayerEvent.LogoutEvent} event */",
+      "function playerLogout(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IPlayerEvent.LogoutEvent"
+  },
+  "playerMouseClicked": {
+    "prefix": [
+      "playerMouseClicked",
+      "function playerMouseClicked"
+    ],
+    "body": [
+      "/** @param {IPlayerEvent.MouseClickedEvent} event */",
+      "function playerMouseClicked(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IPlayerEvent.MouseClickedEvent"
+  },
+  "playerOnEffect": {
+    "prefix": [
+      "playerOnEffect",
+      "function playerOnEffect"
+    ],
+    "body": [
+      "/** @param {IPlayerEvent.EffectEvent} event */",
+      "function playerOnEffect(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IPlayerEvent.EffectEvent"
+  },
+  "playerOnEffectAdd": {
+    "prefix": [
+      "playerOnEffectAdd",
+      "function playerOnEffectAdd"
+    ],
+    "body": [
+      "/** @param {IPlayerEvent.EffectEvent.Added} event */",
+      "function playerOnEffectAdd(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IPlayerEvent.EffectEvent.Added"
+  },
+  "playerOnEffectRemove": {
+    "prefix": [
+      "playerOnEffectRemove",
+      "function playerOnEffectRemove"
+    ],
+    "body": [
+      "/** @param {IPlayerEvent.EffectEvent.Removed} event */",
+      "function playerOnEffectRemove(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IPlayerEvent.EffectEvent.Removed"
+  },
+  "playerOnEffectTick": {
+    "prefix": [
+      "playerOnEffectTick",
+      "function playerOnEffectTick"
+    ],
+    "body": [
+      "/** @param {IPlayerEvent.EffectEvent.Ticked} event */",
+      "function playerOnEffectTick(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IPlayerEvent.EffectEvent.Ticked"
+  },
+  "playerPickUp": {
+    "prefix": [
+      "playerPickUp",
+      "function playerPickUp"
+    ],
+    "body": [
+      "/** @param {IPlayerEvent.PickUpEvent} event */",
+      "function playerPickUp(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IPlayerEvent.PickUpEvent"
+  },
+  "playerPickupXP": {
+    "prefix": [
+      "playerPickupXP",
+      "function playerPickupXP"
+    ],
+    "body": [
+      "/** @param {IPlayerEvent.PickupXPEvent} event */",
+      "function playerPickupXP(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IPlayerEvent.PickupXPEvent"
+  },
+  "playerPlaySound": {
+    "prefix": [
+      "playerPlaySound",
+      "function playerPlaySound"
+    ],
+    "body": [
+      "/** @param {IPlayerEvent.SoundEvent} event */",
+      "function playerPlaySound(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IPlayerEvent.SoundEvent"
+  },
+  "playerProfile": {
+    "prefix": [
+      "playerProfile",
+      "function playerProfile"
+    ],
+    "body": [
+      "/** @param {IPlayerEvent.ProfileEvent} event */",
+      "function playerProfile(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IPlayerEvent.ProfileEvent"
+  },
+  "playerProfileChange": {
+    "prefix": [
+      "playerProfileChange",
+      "function playerProfileChange"
+    ],
+    "body": [
+      "/** @param {IPlayerEvent.ProfileEvent.Changed} event */",
+      "function playerProfileChange(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IPlayerEvent.ProfileEvent.Changed"
+  },
+  "playerProfileCreate": {
+    "prefix": [
+      "playerProfileCreate",
+      "function playerProfileCreate"
+    ],
+    "body": [
+      "/** @param {IPlayerEvent.ProfileEvent.Create} event */",
+      "function playerProfileCreate(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IPlayerEvent.ProfileEvent.Create"
+  },
+  "playerProfileRemove": {
+    "prefix": [
+      "playerProfileRemove",
+      "function playerProfileRemove"
+    ],
+    "body": [
+      "/** @param {IPlayerEvent.ProfileEvent.Removed} event */",
+      "function playerProfileRemove(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IPlayerEvent.ProfileEvent.Removed"
+  },
+  "playerRangedCharge": {
+    "prefix": [
+      "playerRangedCharge",
+      "function playerRangedCharge"
+    ],
+    "body": [
+      "/** @param {IPlayerEvent.RangedChargeEvent} event */",
+      "function playerRangedCharge(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IPlayerEvent.RangedChargeEvent"
+  },
+  "playerRangedLaunched": {
+    "prefix": [
+      "playerRangedLaunched",
+      "function playerRangedLaunched"
+    ],
+    "body": [
+      "/** @param {IPlayerEvent.RangedLaunchedEvent} event */",
+      "function playerRangedLaunched(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IPlayerEvent.RangedLaunchedEvent"
+  },
+  "playerRespawn": {
+    "prefix": [
+      "playerRespawn",
+      "function playerRespawn"
+    ],
+    "body": [
+      "/** @param {IPlayerEvent.RespawnEvent} event */",
+      "function playerRespawn(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IPlayerEvent.RespawnEvent"
+  },
+  "playerRightClick": {
+    "prefix": [
+      "playerRightClick",
+      "function playerRightClick"
+    ],
+    "body": [
+      "/** @param {IPlayerEvent.RightClickEvent} event */",
+      "function playerRightClick(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IPlayerEvent.RightClickEvent"
+  },
+  "playerSleep": {
+    "prefix": [
+      "playerSleep",
+      "function playerSleep"
+    ],
+    "body": [
+      "/** @param {IPlayerEvent.SleepEvent} event */",
+      "function playerSleep(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IPlayerEvent.SleepEvent"
+  },
+  "playerStartItem": {
+    "prefix": [
+      "playerStartItem",
+      "function playerStartItem"
+    ],
+    "body": [
+      "/** @param {IPlayerEvent.StartUsingItem} event */",
+      "function playerStartItem(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IPlayerEvent.StartUsingItem"
+  },
+  "playerStopItem": {
+    "prefix": [
+      "playerStopItem",
+      "function playerStopItem"
+    ],
+    "body": [
+      "/** @param {IPlayerEvent.StopUsingItem} event */",
+      "function playerStopItem(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IPlayerEvent.StopUsingItem"
+  },
+  "playerTick": {
+    "prefix": [
+      "playerTick",
+      "function playerTick"
+    ],
+    "body": [
+      "/** @param {IPlayerEvent.UpdateEvent} event */",
+      "function playerTick(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IPlayerEvent.UpdateEvent"
+  },
+  "playerTimer": {
+    "prefix": [
+      "playerTimer",
+      "function playerTimer"
+    ],
+    "body": [
+      "/** @param {IPlayerEvent.TimerEvent} event */",
+      "function playerTimer(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IPlayerEvent.TimerEvent"
+  },
+  "playerToss": {
+    "prefix": [
+      "playerToss",
+      "function playerToss"
+    ],
+    "body": [
+      "/** @param {IPlayerEvent.TossEvent} event */",
+      "function playerToss(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IPlayerEvent.TossEvent"
+  },
+  "playerUseHoe": {
+    "prefix": [
+      "playerUseHoe",
+      "function playerUseHoe"
+    ],
+    "body": [
+      "/** @param {IPlayerEvent.UseHoeEvent} event */",
+      "function playerUseHoe(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IPlayerEvent.UseHoeEvent"
+  },
+  "playerUsingItem": {
+    "prefix": [
+      "playerUsingItem",
+      "function playerUsingItem"
+    ],
+    "body": [
+      "/** @param {IPlayerEvent.UsingItem} event */",
+      "function playerUsingItem(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IPlayerEvent.UsingItem"
+  },
+  "playerWakeUp": {
+    "prefix": [
+      "playerWakeUp",
+      "function playerWakeUp"
+    ],
+    "body": [
+      "/** @param {IPlayerEvent.WakeUpEvent} event */",
+      "function playerWakeUp(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IPlayerEvent.WakeUpEvent"
+  },
+  "projectileImpact": {
+    "prefix": [
+      "projectileImpact",
+      "function projectileImpact"
+    ],
+    "body": [
+      "/** @param {IProjectileEvent.ImpactEvent} event */",
+      "function projectileImpact(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IProjectileEvent.ImpactEvent"
+  },
+  "projectileTick": {
+    "prefix": [
+      "projectileTick",
+      "function projectileTick"
+    ],
+    "body": [
+      "/** @param {IProjectileEvent.UpdateEvent} event */",
+      "function projectileTick(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IProjectileEvent.UpdateEvent"
+  },
+  "questCompleted": {
+    "prefix": [
+      "questCompleted",
+      "function questCompleted"
+    ],
+    "body": [
+      "/** @param {IQuestEvent.QuestCompletedEvent} event */",
+      "function questCompleted(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IQuestEvent.QuestCompletedEvent"
+  },
+  "questStart": {
+    "prefix": [
+      "questStart",
+      "function questStart"
+    ],
+    "body": [
+      "/** @param {IQuestEvent.QuestStartEvent} event */",
+      "function questStart(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IQuestEvent.QuestStartEvent"
+  },
+  "questTurnIn": {
+    "prefix": [
+      "questTurnIn",
+      "function questTurnIn"
+    ],
+    "body": [
+      "/** @param {IQuestEvent.QuestTurnedInEvent} event */",
+      "function questTurnIn(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IQuestEvent.QuestTurnedInEvent"
+  },
+  "recipeCraftPost": {
+    "prefix": [
+      "recipeCraftPost",
+      "function recipeCraftPost"
+    ],
+    "body": [
+      "/** @param {IRecipeEvent.Post} event */",
+      "function recipeCraftPost(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IRecipeEvent.Post"
+  },
+  "recipeCraftPre": {
+    "prefix": [
+      "recipeCraftPre",
+      "function recipeCraftPre"
+    ],
+    "body": [
+      "/** @param {IRecipeEvent.Pre} event */",
+      "function recipeCraftPre(event) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "CustomNPC+ hook for IRecipeEvent.Pre"
+  }
+}

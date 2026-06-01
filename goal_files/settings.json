@@ -1,0 +1,6 @@
+{
+  "javascript.implicitProjectConfig.checkJs": true,
+  "js/ts.suggest.completeFunctionCalls": true,
+  "editor.snippetSuggestions": "top",
+  "editor.tabCompletion": "on"
+}

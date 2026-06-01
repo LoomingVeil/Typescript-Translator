@@ -11,39 +11,51 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+import java.nio.file.*;
+import java.nio.file.attribute.BasicFileAttributes;
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * Things we need to fix:
- * Make inner classes work
+ * Add native javascript functions
+ * Add print()
+ * Autocomplete events
  */
 public class JavaToTypeScript {
     private static final Map<String, Path> classLocationMap = new HashMap<>();
     private static final Set<String> unknownTypes = new HashSet<>();
     private static Set<String> currentUnknownTypes = new HashSet<>();
+    private static ArrayList<String> events = new ArrayList<>();
+    private static final Map<String, String> hookMap = new LinkedHashMap<>();
     private static final File inputRoot = new File("java_src");
     private static final File outputRoot = new File("ts_src");
-    private static final Map<String, String> staticTypes = new HashMap<>();
+    private static final File srcRoot = new File("src/main/java/com/veil");
+    private static final Map<String, String> globalObjects = new HashMap<>();
+    private static final boolean treatGlobalVarsDifferently = true;
 
     static {
         // Class name, Global variable name
-        staticTypes.put("AbstractNpcAPI", "API");
-        staticTypes.put("AbstractExtendedAPI", "extAPI");
-        staticTypes.put("IAnimationType", "AnimationType");
-        staticTypes.put("IAttributeSection", "AttributeSection");
-        staticTypes.put("IAttributeValueType", "AttributeValueType");
-        staticTypes.put("IColorCode", "Color");
-        staticTypes.put("IEntityType", "EntityType");
-        staticTypes.put("IJobType", "Job");
-        staticTypes.put("IKeys", "Key");
-        staticTypes.put("IRoleType", "Role");
-        staticTypes.put("IParticleType", "Particle");
-        staticTypes.put("IItemUseAction", "UseAction");
-        staticTypes.put("IMouseButton", "MouseButton");
+        globalObjects.put("AbstractNpcAPI", "API");
+        globalObjects.put("AbstractExtendedAPI", "extAPI");
+        globalObjects.put("AbstractShapeMaker", "ShapeMaker");
+        globalObjects.put("AbstractAnimationType", "AnimationType");
+        globalObjects.put("AbstractColorCodes", "Color");
+        globalObjects.put("AbstractEntityType", "EntityType");
+        globalObjects.put("AbstractJobType", "Job");
+        globalObjects.put("AbstractRoleType", "Role");
+        globalObjects.put("AbstractKeys", "Key");
+        globalObjects.put("AbstractMouseButton", "MouseButton");
+        globalObjects.put("AbstractParticleType", "Particle");
+        globalObjects.put("AbstractItemUseAction", "UseAction");
+        globalObjects.put("AbstractAttributeSection", "AttributeSection");
+        globalObjects.put("AbstractAttributeValueType", "AttributeValueType");
+        globalObjects.put("AbstractBlockSide", "BlockSide");
+        globalObjects.put("AbstractArmorSlot", "ArmorSlot");
+        globalObjects.put("AbstractItemType", "ItemType");
+        globalObjects.put("AbstractEffect", "Effect");
+        globalObjects.put("AbstractSkinType", "SkinType");
     }
 
     public static void main(String[] args) throws Exception {
@@ -51,42 +63,63 @@ public class JavaToTypeScript {
         // Map all types so that we can find relative paths later for imports
         mapAllTypes(parser, inputRoot.toPath(), outputRoot.toPath());
 
-        // Modify parts of the source files to make the end result more cohesive
+        // Modify parts of the source files to make the end result have fewer errors while maintaining the same functionality
         overrideFiles();
 
-        // Translate ever file
+        // Tries to delete
+        deleteOldSource(outputRoot);
+
+        // Translate every file
         Files.walk(inputRoot.toPath())
                 .filter(p -> p.toString().endsWith(".java"))
                 .forEach(path -> processFile(parser, outputRoot, path.toFile()));
 
-        // Create the IObject class which
-        String IObjectText = "" +
-                "export interface IObject {\n" +
-                "    getClass(): string;\n" +
-                "    toString(): string;\n" +
-                "    equals(other: IObject): boolean;\n" +
-                "}";
-
-        File objOutputPath = new File(outputRoot+"/IObject.ts");
-        try (PrintWriter writer = new PrintWriter(new FileWriter(objOutputPath))) {
-            writer.println(IObjectText);
-        }
+        copyTypeScriptFiles();
+        createIndexFile(inputRoot.toPath());
+        createEventDefinitionsFile(inputRoot.toPath());
+        createHooksFile(inputRoot.toPath());
 
         // If all types are known, no need to continue
         if (unknownTypes.isEmpty()) return;
 
-        // Creates a file for all types that stores interface shells so that can be imported to lower errors
-        File outFile = new File(outputRoot, "missingTypes.ts");
+        // Creates a file for missing types with empty shells so that we don't get any errors
+        File outFile = new File(outputRoot, "missingTypes.d.ts");
         try (PrintWriter writer = new PrintWriter(new FileWriter(outFile))) {
             for (String type : unknownTypes) {
                 writer.println("/** This interface is a shell. The real class is either defined in java or belongs to Minecraft. */");
                 writer.println("export interface " + type + " {}");
             }
         } catch (IOException e) {
-            System.err.println("Failed to write missingTypes.ts: " + e.getMessage());
+            System.err.println("Failed to write missingTypes.d.ts: " + e.getMessage());
         }
 
         System.out.println("Wrote " + unknownTypes.size() + " missing types to " + outFile.getPath());
+    }
+
+    public static void deleteOldSource(File path) {
+        if (!path.exists()) return;
+        Path directoryToDelete = Paths.get(path.getPath());
+
+        try {
+            Files.walkFileTree(directoryToDelete, new SimpleFileVisitor<Path>() {
+                // Step 1: Delete each file you encounter
+                @Override
+                public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
+                    Files.delete(file);
+                    return FileVisitResult.CONTINUE;
+                }
+
+                // Step 2: Delete the directory itself after its contents are gone
+                @Override
+                public FileVisitResult postVisitDirectory(Path dir, IOException exc) throws IOException {
+                    Files.delete(dir);
+                    return FileVisitResult.CONTINUE;
+                }
+            });
+            System.out.println("Folder and all its contents deleted successfully!");
+        } catch (IOException e) {
+            System.err.println("Failed to delete the folder: " + e.getMessage());
+        }
     }
 
     private static void overrideFiles() throws IOException {
@@ -111,6 +144,168 @@ public class JavaToTypeScript {
         content = Files.readString(IEntityLivingBaseFile);
         content = content.replace("T getMCEntity()", "Entity getMCEntity()");
         Files.writeString(IEntityLivingBaseFile, content);
+
+        Path IItemEventFile = (new File(inputRoot+"/noppes/npcs/api/event/IItemEvent.java")).toPath();
+        content = Files.readString(IItemEventFile);
+        content = content.replace("IItemCustomizable", "IItemCustom");
+        Files.writeString(IItemEventFile, content);
+
+        Path IPlayerFile = (new File(inputRoot+"/noppes/npcs/api/entity/IPlayer.java")).toPath();
+        content = Files.readString(IPlayerFile);
+        content = content.replace("void setRotation(float rotationYaw, float rotationPitch);", "");
+        Files.writeString(IPlayerFile, content);
+    }
+
+    private static void copyTypeScriptFiles() throws IOException {
+        Path file;
+        String content;
+        File outputPath;
+
+        file = (new File(srcRoot+"/patches/IObject.ts")).toPath();
+        content = Files.readString(file);
+
+        outputPath = new File(outputRoot+"/IObject.d.ts");
+        try (PrintWriter writer = new PrintWriter(new FileWriter(outputPath))) {
+            writer.println(content);
+        }
+
+        file = (new File(srcRoot+"/patches/IJava.ts")).toPath();
+        content = Files.readString(file);
+
+        outputPath = new File(outputRoot+"/IJava.d.ts");
+        try (PrintWriter writer = new PrintWriter(new FileWriter(outputPath))) {
+            writer.println(content);
+        }
+
+        file = (new File(srcRoot+"/patches/GlobalFunctions.d.ts")).toPath();
+        content = Files.readString(file);
+
+        outputPath = new File(outputRoot+"/GlobalFunctions.d.ts");
+        try (PrintWriter writer = new PrintWriter(new FileWriter(outputPath))) {
+            writer.println(content);
+        }
+    }
+
+    private static void createIndexFile(Path inputRoot) throws IOException {
+        StringBuilder sb = new StringBuilder();
+        for (String clazz : classLocationMap.keySet()) {
+            Path value = classLocationMap.get(clazz);
+            sb.append("type "+clazz+" = import(\""+inputRoot.relativize(value).getParent().toString().replace("\\", "/").replace("../ts_src/", "")+"/"+clazz+"\")."+clazz+";\n");
+        }
+
+        File javaOutputPath = new File(outputRoot+"/index.d.ts");
+        try (PrintWriter writer = new PrintWriter(new FileWriter(javaOutputPath))) {
+            writer.println(sb);
+        }
+    }
+
+    public static void createEventDefinitionsFile(Path inputRoot) throws IOException {
+        Collections.sort(events);
+
+        Node root = new Node("root");
+        for (String event : events) {
+            String[] parts = event.split("\\.");
+            Node current = root;
+
+            for (int i = 0; i < parts.length; i++) {
+                String part = parts[i];
+                boolean isLast = (i == parts.length - 1);
+
+                current = current.children.computeIfAbsent(part, k -> new Node(part));
+                if (isLast) {
+                    current.isType = true;
+                }
+            }
+        }
+
+        StringBuilder sb = new StringBuilder();
+        for (Node topLevelNode : root.children.values()) {
+            printNode(topLevelNode, 0, "", inputRoot, sb);
+        }
+
+        File javaOutputPath = new File(outputRoot+"/events.d.ts");
+        try (PrintWriter writer = new PrintWriter(new FileWriter(javaOutputPath))) {
+            writer.println(sb);
+        }
+    }
+
+    private static void printNode(Node node, int depth, String currentPath, Path inputRoot, StringBuilder sb) {
+        String indent = "\t".repeat(depth);
+
+        String fullDotPath = currentPath.isEmpty() ? node.name : currentPath + "." + node.name;
+        String baseClass = fullDotPath.split("\\.")[0];
+
+        Path path = classLocationMap.get(baseClass);
+        String importStr = "";
+        if (path != null) {
+            importStr = inputRoot.relativize(path).getParent().toString().replace("\\", "/") + "/" + baseClass;
+        }
+
+        if (node.children.isEmpty()) {
+            sb.append(indent).append("type ").append(node.name)
+                    .append(" = import(\"").append(importStr).append("\").").append(node.name).append(";\n");
+        } else {
+            if (depth == 0) {
+                sb.append(indent).append("declare namespace ").append(node.name).append(" {\n");
+            } else {
+                if (node.isType) {
+                    sb.append(indent).append("type ").append(node.name)
+                            .append(" = import(\"").append(importStr).append("\").").append(node.name).append(";\n");
+                }
+                sb.append(indent).append("namespace ").append(node.name).append(" {\n");
+            }
+
+            for (Node child : node.children.values()) {
+                printNode(child, depth + 1, fullDotPath, inputRoot, sb);
+            }
+
+            sb.append(indent).append("}\n");
+
+            if (depth == 0) {
+                sb.append("\n");
+            }
+        }
+    }
+
+    static class Node {
+        String name;
+        boolean isType = false;
+        Map<String, Node> children = new LinkedHashMap<>();
+
+        Node(String name) {
+            this.name = name;
+        }
+    }
+
+    public static void createHooksFile(Path inputRoot) throws IOException {
+        StringBuilder sb = new StringBuilder();
+        sb.append("// Generated hook aliases for VS Code autocomplete in plain JS scripts.\n");
+        sb.append("// These are authoring-time declarations and do not modify runtime behavior.\n");
+
+        for (Map.Entry<String, String> entry : hookMap.entrySet()) {
+            String hookName = entry.getKey();
+            String eventPath = entry.getValue();
+
+            // Extract prefix from event path (e.g., "IPlayerEvent" -> "player")
+            String[] parts = eventPath.split("\\.");
+            String firstPart = parts[0];
+            String prefix = firstPart.substring(1).toLowerCase(); // Remove 'I' and lowercase
+
+            // Capitalize first letter of hook name
+            String capitalizedHook = hookName.substring(0, 1).toUpperCase() + hookName.substring(1);
+
+            // Combine prefix and hook name
+            String fullHookName = prefix + capitalizedHook;
+
+            sb.append("declare function ").append(hookName).append("(event: ").append(eventPath).append("): void;\n");
+        }
+
+        File outputPath = new File(outputRoot+"/hooks.d.ts");
+        try (PrintWriter writer = new PrintWriter(new FileWriter(outputPath))) {
+            writer.println(sb);
+        }
+
+        System.out.println("Generated hooks.d.ts with " + hookMap.size() + " hooks");
     }
 
     private static void mapAllTypes(JavaParser parser, Path inputRoot, Path outputRoot) throws IOException {
@@ -140,7 +335,7 @@ public class JavaToTypeScript {
                     }
                 });
 
-        classLocationMap.put("IObject", Paths.get("ts_src/IObject.ts"));
+        classLocationMap.put("IObject", Paths.get("ts_src/IObject.d.ts"));
         System.out.println("Mapped " + classLocationMap.size() + " types.\n");
     }
 
@@ -154,20 +349,20 @@ public class JavaToTypeScript {
             // The only forbidden types are the types of the interfaces defined in the same file.
             List<String> forbiddenTypes = new ArrayList<>();
 
-            boolean isStatic = false;
+            boolean isGlobalObject = false;
             String exportStatement = "";
 
             for (TypeDeclaration<?> type : cu.getTypes()) {
-                if (type instanceof ClassOrInterfaceDeclaration clazz) {
+                if (type instanceof ClassOrInterfaceDeclaration) {
+                    ClassOrInterfaceDeclaration clazz = (ClassOrInterfaceDeclaration) type;
 
                     forbiddenTypes.add(clazz.getNameAsString());
-                    processClassOrInterface(clazz, sb, referencedTypes, forbiddenTypes);
+                    processClassOrInterface(clazz, sb, referencedTypes, forbiddenTypes, null);
 
                     String className = clazz.getNameAsString();
-                    if (staticTypes.containsKey(mapType(className))) {
-                        isStatic = true;
-                        exportStatement = "export const " + staticTypes.get(className) + ": " +
-                                className + " = {} as " + className + ";";
+                    if (globalObjects.containsKey(mapType(className)) && treatGlobalVarsDifferently) {
+                        isGlobalObject = true;
+                        // exportStatement = "export const " + staticTypes.get(className) + ": " + className + " = {} as " + className + ";";
                     }
                 }
             }
@@ -181,34 +376,12 @@ public class JavaToTypeScript {
             File outDir = new File(outputRoot, packagePath);
             outDir.mkdirs();
 
-            String baseName = javaFile.getName().replace(".java", ".ts");
+            String baseName = javaFile.getName().replace(".java", ".d.ts");
             File outFile = new File(outDir, baseName);
 
             // ---- Build imports ----
             StringBuilder finalOutput = new StringBuilder();
-            Path currentDir = outFile.getParentFile().toPath();
             referencedTypes.removeAll(forbiddenTypes);
-
-            for (String ref : referencedTypes) {
-                Path target = classLocationMap.get(ref);
-                if (target != null && !target.equals(outFile.toPath())) {
-                    Path rel = currentDir.relativize(target);
-                    String importPath = rel.toString().replace(File.separator, "/");
-                    finalOutput.append("import { ").append(ref).append(" } from \"./")
-                            .append(importPath.replace(".ts", "")).append("\";\n");
-                }
-            }
-
-            finalOutput.append("\n");
-
-            Path missingTypesFile = outputRoot.toPath().resolve("missingTypes.ts");
-
-            for (String ref : currentUnknownTypes) {
-                Path rel = currentDir.relativize(missingTypesFile);
-                String importPath = rel.toString().replace(File.separator, "/");
-                finalOutput.append("import { ").append(ref).append(" } from \"./")
-                        .append(importPath.replace(".ts", "")).append("\";\n");
-            }
 
             if (!referencedTypes.isEmpty()) {
                 finalOutput.append("\n");
@@ -216,13 +389,13 @@ public class JavaToTypeScript {
 
             finalOutput.append(sb);
 
-            if (isStatic) {
+            if (isGlobalObject) {
                 System.out.println("Added static: " + exportStatement);
                 finalOutput.append("\n" + exportStatement + "\n");
             }
 
             try (PrintWriter writer = new PrintWriter(new FileWriter(outFile))) {
-                writer.print(finalOutput.toString());
+                writer.print(finalOutput);
             }
 
             System.out.println("Converted: " + javaFile.getPath() + " -> " + outFile.getPath());
@@ -234,7 +407,24 @@ public class JavaToTypeScript {
         }
     }
 
-    private static void processClassOrInterface(ClassOrInterfaceDeclaration clazz, StringBuilder sb, Set<String> referencedTypes, List<String> forbiddenTypes) {
+    private static void processClassOrInterface(ClassOrInterfaceDeclaration clazz, StringBuilder sb, Set<String> referencedTypes, List<String> forbiddenTypes, List<String> parentClasses) {
+        boolean isGlobalObject = globalObjects.containsKey(clazz.getNameAsString());
+
+        // ---- Extract hook name from javadoc ----
+        String[] hookNameHolder = new String[1];
+        clazz.getJavadocComment().ifPresent(javadoc -> {
+            String javadocText = javadoc.parse().toText();
+            for (String line : javadocText.split("\n")) {
+                if (line.trim().startsWith("@hookName")) {
+                    String[] parts = line.trim().split("\\s+");
+                    if (parts.length >= 2) {
+                        hookNameHolder[0] = parts[1];
+                    }
+                    break;
+                }
+            }
+        });
+        String hookName = hookNameHolder[0];
 
         // ---- Javadoc ----
         clazz.getJavadocComment().ifPresent(javadoc -> {
@@ -247,12 +437,39 @@ public class JavaToTypeScript {
         });
 
         // Ensure extends at least IObject
-        if (clazz.getExtendedTypes().isEmpty()) {
+        if (clazz.getExtendedTypes().isEmpty() && !isGlobalObject) {
             clazz.addExtendedType("IObject");
             referencedTypes.add("IObject");
         }
 
-        sb.append("export interface ").append(clazz.getName())
+        String preStatement = "export interface "+clazz.getName();
+        if (isGlobalObject) {
+            preStatement = "declare namespace "+ globalObjects.get(clazz.getName().toString());
+        } else if (clazz.getNameAsString().startsWith("Abstract")) {
+            System.out.println("Class "+clazz.getNameAsString()+" begins with Abstract, but has no alias!");
+        }
+
+        List<String> currentPath = (parentClasses == null) ? new ArrayList<>() : new ArrayList<>(parentClasses);
+        currentPath.add(clazz.getNameAsString());
+
+        if (currentPath.stream().anyMatch(name -> name.endsWith("Event"))) {
+            System.out.println("Found event type " + clazz.getNameAsString());
+            // Joins the entire path: e.g., "EventGrandparent4.eventParent4.Event4"
+            events.add(String.join(".", currentPath));
+
+            // Store hook name if found
+            if (hookName != null) {
+                String fullEventPath = String.join(".", currentPath);
+                hookMap.put(hookName, fullEventPath);
+            }
+        } else if (clazz.getNameAsString().startsWith("Abstract")) {
+            System.out.println("Found global object "+clazz.getNameAsString());
+            if (!globalObjects.containsKey(clazz.getNameAsString())) {
+                System.out.println("WARNING: Abstract class " + clazz.getNameAsString() + " does not have an alias mapping in globalObjects");
+            }
+        }
+
+        sb.append(preStatement)
                 .append(clazz.getExtendedTypes().isNonEmpty() ? " extends " : "")
                 .append(clazz.getExtendedTypes().stream()
                 .map(ext -> ext.getNameAsString())
@@ -268,7 +485,11 @@ public class JavaToTypeScript {
             for (VariableDeclarator var : field.getVariables()) {
                 String fieldName = var.getNameAsString();
                 String fieldType = mapType(var.getType().asString());
-                sb.append("\t").append(fieldName).append(": ").append(fieldType).append(";\n");
+                if (isGlobalObject) {
+                    sb.append("\tvar ").append(fieldName).append(": ").append(fieldType).append(";\n");
+                } else {
+                    sb.append("\t").append(fieldName).append(": ").append(fieldType).append(";\n");
+                }
             }
         }
 
@@ -301,17 +522,39 @@ public class JavaToTypeScript {
                     .map(p -> p.getName() + ": " + mapType(p.getType().asString()))
                     .collect(Collectors.joining(", "));
 
-            sb.append("\t").append(method.getName())
+            preStatement = "";
+            if (isGlobalObject) {
+                preStatement = "function ";
+            }
+
+            sb.append("\t").append(preStatement)
+                    .append(method.getName())
                     .append("(").append(params).append("): ")
                     .append(tsType).append(";\n\n");
         }
 
+        // ---- Check for @Cancelable annotation ----
+        boolean isCancelable = clazz.getAnnotations().stream()
+                .anyMatch(ann -> ann.getNameAsString().equals("Cancelable"));
+
+        if (isCancelable) {
+            sb.append("\t/** Sets whether this event is canceled. */\n");
+            sb.append("\tsetCanceled(status: boolean): void;\n\n");
+            sb.append("\t/** Sets whether this event is cancelled. */\n");
+            sb.append("\tsetCancelled(status: boolean): void;\n\n");
+        }
+
+        sb.deleteCharAt(sb.length() - 1);
+
         sb.append("}\n\n");
 
         for (BodyDeclaration<?> member : clazz.getMembers()) {
-            if (member instanceof ClassOrInterfaceDeclaration inner) {
+            if (member instanceof ClassOrInterfaceDeclaration) {
+                ClassOrInterfaceDeclaration inner = (ClassOrInterfaceDeclaration) member;
                 forbiddenTypes.add(inner.getNameAsString());
-                processClassOrInterface(inner, sb, referencedTypes, forbiddenTypes);
+                System.out.println("Found sub member "+inner.getNameAsString()+" for class "+clazz.getNameAsString());
+
+                processClassOrInterface(inner, sb, referencedTypes, forbiddenTypes, currentPath);
             }
         }
     }

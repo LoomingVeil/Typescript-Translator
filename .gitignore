@@ -4,6 +4,8 @@ target/
 !**/src/test/**/target/
 
 java_src
+fetchLatestSource.py
+update.bat
 
 ### IntelliJ IDEA ###
 .idea/modules.xml

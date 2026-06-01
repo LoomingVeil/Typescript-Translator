@@ -1,0 +1,46 @@
+
+export interface AbstractCustomParticleIndex extends IObject {
+	SMOKE_1: number;
+	SMOKE_2: number;
+	SMOKE_3: number;
+	SMOKE_4: number;
+	SMOKE_5: number;
+	SMOKE_6: number;
+	SMOKE_7: number;
+	SMOKE_8: number;
+	BUBBLE: number;
+	FLAME: number;
+	NOTE: number;
+	CRIT: number;
+	MAGIC_CRIT: number;
+	HEART: number;
+	ANGRY_VILLAGER: number;
+	GREEN_SPARKLE: number;
+	EVIL_VILLAGER: number;
+	WATER_DROPLET: number;
+	WATER_DROP: number;
+	EFFECT_1: number;
+	EFFECT_2: number;
+	EFFECT_3: number;
+	EFFECT_4: number;
+	EFFECT_5: number;
+	EFFECT_6: number;
+	EFFECT_7: number;
+	EFFECT_8: number;
+	X_1: number;
+	X_2: number;
+	X_3: number;
+	X_4: number;
+	X_5: number;
+	X_6: number;
+	X_7: number;
+	X_8: number;
+	DIAMOND_1: number;
+	DIAMOND_2: number;
+	DIAMOND_3: number;
+	DIAMOND_4: number;
+	DIAMOND_5: number;
+	DIAMOND_6: number;
+	DIAMOND_7: number;
+	DIAMOND_8: number;}
+

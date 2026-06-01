@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "target": "ES5",
+        "module": "none",
+        "allowJs": true,
+        "checkJs": true,
+        "baseUrl": ".",
+        "skipLibCheck": true,
+        "noEmit": true
+    },
+    "include": ["src/**/*", "scripts/**/*", "ts_src/**/*"],
+    "exclude": ["java_src/**/*"]
+}

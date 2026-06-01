@@ -1,0 +1,29 @@
+// Selected shell types promoted from missingTypes.d.ts.
+// Builtin-like names are intentionally not exposed as globals.
+type PooledMutableBlockPos = import("../Typescript Translator/ts_src/missingTypes").PooledMutableBlockPos;
+type Entity = import("../Typescript Translator/ts_src/missingTypes").Entity;
+type ProfileEvent = import("../Typescript Translator/ts_src/missingTypes").ProfileEvent;
+type EnumFacing = import("../Typescript Translator/ts_src/missingTypes").EnumFacing;
+type NBTTagCompound = import("../Typescript Translator/ts_src/missingTypes").NBTTagCompound;
+type WorldServer = import("../Typescript Translator/ts_src/missingTypes").WorldServer;
+type EventBus = import("../Typescript Translator/ts_src/missingTypes").EventBus;
+type World = import("../Typescript Translator/ts_src/missingTypes").World;
+type TileEntity = import("../Typescript Translator/ts_src/missingTypes").TileEntity;
+type Entry = import("../Typescript Translator/ts_src/missingTypes").Entry;
+type Container = import("../Typescript Translator/ts_src/missingTypes").Container;
+type ResourceLocation = import("../Typescript Translator/ts_src/missingTypes").ResourceLocation;
+type BlockData = import("../Typescript Translator/ts_src/missingTypes").BlockData;
+type IInventory = import("../Typescript Translator/ts_src/missingTypes").IInventory;
+type DamageSource = import("../Typescript Translator/ts_src/missingTypes").DamageSource;
+type InventoryEnderChest = import("../Typescript Translator/ts_src/missingTypes").InventoryEnderChest;
+type EffectEvent = import("../Typescript Translator/ts_src/missingTypes").EffectEvent;
+type noppes = import("../Typescript Translator/ts_src/missingTypes").noppes;
+type IFrameEvent = import("../Typescript Translator/ts_src/missingTypes").IFrameEvent;
+type InventoryPlayer = import("../Typescript Translator/ts_src/missingTypes").InventoryPlayer;
+type Block = import("../Typescript Translator/ts_src/missingTypes").Block;
+type Event = import("../Typescript Translator/ts_src/missingTypes").Event;
+type Slot = import("../Typescript Translator/ts_src/missingTypes").Slot;
+type INpc = import("../Typescript Translator/ts_src/missingTypes").INpc;
+type ItemStack = import("../Typescript Translator/ts_src/missingTypes").ItemStack;
+type MutableBlockPos = import("../Typescript Translator/ts_src/missingTypes").MutableBlockPos;
+type EntityCustomProjectile = import("../Typescript Translator/ts_src/missingTypes").EntityCustomProjectile;
